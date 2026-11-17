@@ -184,9 +184,16 @@ input[type=range]:focus-visible{outline:2px solid var(--hot);outline-offset:8px}
 .tcard{background:linear-gradient(180deg,var(--panel),rgba(3,8,10,.7));border:1px solid var(--line);border-radius:14px;padding:22px;text-align:left;display:flex;flex-direction:column;gap:10px}
 .bub{background:var(--panel2);border:1px solid var(--line);border-radius:3px 14px 14px 14px;padding:12px 15px;font-size:.92rem;line-height:1.55;color:var(--paper);max-width:94%}
 .tseg{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-top:6px}
-.gbadge{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:15px 24px;border:1px solid var(--deepcyan);border-radius:999px;font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);text-decoration:none;transition:border-color .2s}
-.gbadge:hover{border-color:var(--cyan)}
-.gbadge .gstar{color:var(--cyan);font-size:.95rem}
+.ghead{display:inline-flex;align-items:center;gap:14px;margin-top:44px;padding:14px 26px;border:1px solid var(--line);border-radius:999px;background:linear-gradient(180deg,var(--panel),rgba(3,8,10,.7))}
+.ghead .gscore{font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--paper)}
+.ghead .gstars{color:#F5B942;font-size:1rem;letter-spacing:.1em}
+.ghead .gcount{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.grev{background:linear-gradient(180deg,var(--panel),rgba(3,8,10,.7));border:1px solid var(--line);border-radius:14px;padding:22px;text-align:left;display:flex;flex-direction:column;gap:10px}
+.grev .gs{color:#F5B942;font-size:.85rem;letter-spacing:.14em}
+.grev p{font-size:.92rem;line-height:1.55;color:var(--paper)}
+.grev .gname{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:auto}
+.glink{display:inline-block;margin-top:22px;font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);text-decoration:none}
+.glink:hover{color:var(--hot)}
 .pnote{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:20px;line-height:1.9}
 .card{
   background:linear-gradient(180deg,var(--panel),rgba(3,8,10,.7));
@@ -417,9 +424,31 @@ footer p{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-tran
       </div>
     </div>
 
-    <a class="gbadge" href="https://www.google.com/maps/search/Avence+Performance+Ag%C3%AAncia+de+Marketing+Digital+Campo+Grande" target="_blank" rel="noopener">
-      <span class="gstar">★</span> Avaliações no Google <span>→</span>
-    </a>
+    <div class="ghead">
+      <span class="gscore">5,0</span>
+      <span class="gstars">★★★★★</span>
+      <span class="gcount">11 avaliações no Google</span>
+    </div>
+
+    <div class="proofstats">
+      <div class="grev">
+        <div class="gs">★★★★★</div>
+        <p>Lugar de profissionais de alto nível! Qualquer pessoa que iniciar um projeto com a Avence vai se surpreender e se sentir completamente realizado com os resultados entregues.</p>
+        <div class="gname">William Mendes · Google</div>
+      </div>
+      <div class="grev">
+        <div class="gs">★★★★★</div>
+        <p>Somos clientes há 1 ano e meio. Recomendo!</p>
+        <div class="gname">Dieimes Willian · Google</div>
+      </div>
+      <div class="grev">
+        <div class="gs">★★★★★</div>
+        <p>Estamos há meses com a agência, muito boa.</p>
+        <div class="gname">Ótica Preço Popular · Google</div>
+      </div>
+    </div>
+
+    <a class="glink" href="https://www.google.com/maps/search/Avence+Performance+Ag%C3%AAncia+de+Marketing+Digital+Campo+Grande" target="_blank" rel="noopener">Ver todas no Google →</a>
     <p class="pnote">Mensagens compartilhadas com autorização dos clientes.<br>Resultado varia com produto, verba e operação.</p>
   </div>
 </section>
