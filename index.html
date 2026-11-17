@@ -35,6 +35,8 @@
   "telephone": "+55 67 99814-9663",
   "email": "avenceperformance@gmail.com",
   "areaServed": "BR",
+  "founder": { "@type": "Person", "name": "Giovanny Barbosa" },
+  "sameAs": ["https://www.instagram.com/giobarbosads/"],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Av. Eduardo Elias Zahran, 2022, Sala 02",
@@ -156,18 +158,18 @@ header{
 
 /* hero */
 .hero{padding:44px 0 60px}
-@media(min-width:980px){.hero{padding:64px 0 96px}}
+@media(min-width:980px){.hero{padding:48px 0 96px}}
 .hcopy{margin-bottom:32px}
 @media(min-width:980px){
-  .hcopy{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:end;margin-bottom:44px}
+  .hcopy{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:end;margin-bottom:36px}
   .hcopy h1{font-size:3.15rem}
   .hcopy .lede{margin-top:0}
 }
-.where{
-  font-family:var(--mono);font-weight:500;font-size:.74rem;color:var(--dim);
-  margin-bottom:20px;display:flex;align-items:center;gap:10px;
-}
-.where::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+.byline{display:inline-flex;align-items:center;gap:12px;margin-bottom:22px;text-decoration:none;color:var(--ice);font-size:.92rem;line-height:1.35}
+.byline img{flex:none;width:48px;height:48px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--black),0 0 0 3px var(--deepcyan),0 0 18px rgba(47,227,236,.35)}
+.byline b{font-weight:700}
+.byline small{display:block;font-family:var(--mono);font-weight:500;font-size:.7rem;color:var(--dim);margin-top:3px}
+.byline:hover b{color:var(--cyan)}
 .hnote{display:none;margin-top:16px;font-size:.92rem}
 .hnote a{color:var(--cyan);font-weight:700;text-underline-offset:4px}
 .hnote a:hover{color:var(--hot)}
@@ -267,12 +269,9 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .step p{color:var(--dim);margin-top:8px;font-size:.97rem}
 
 /* prova social */
-.grid2{display:grid;gap:14px;margin-top:14px}
-@media(min-width:900px){.grid2{grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}}
 .grid3{display:grid;gap:14px;margin-top:40px}
 @media(min-width:900px){.grid3{grid-template-columns:repeat(3,1fr);gap:16px}}
 .pstat{padding:26px 24px}
-.swipehint{display:none}
 @media(max-width:899px){
   .pstats{gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;
     background:linear-gradient(90deg,transparent,rgba(47,227,236,.45),transparent) top center/72% 1px no-repeat,linear-gradient(180deg,var(--panel),rgba(0,0,0,.72))}
@@ -284,20 +283,36 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
     margin-left:-22px;margin-right:-22px;padding:0 22px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .swipe::-webkit-scrollbar{display:none}
   .swipe>*{flex:0 0 86%;scroll-snap-align:start}
-  .swipehint{display:block;font-size:.78rem;color:var(--dim);margin-top:10px}
 }
 .pstat .n{font-family:var(--display);font-weight:800;font-size:2.05rem;letter-spacing:-.045em;line-height:1}
 .pstat .l{font-size:.88rem;color:var(--dim);margin-top:12px;line-height:1.5}
-.tcard{display:flex;flex-direction:column;gap:10px}
-.bub{
-  background:var(--panel2);border:1px solid var(--line);
-  border-radius:4px 16px 16px 16px;padding:13px 16px;
-  font-size:.95rem;line-height:1.55;width:fit-content;max-width:96%;
+.taphint{font-size:.8rem;color:var(--dim);margin-top:28px}
+.prints{margin-top:12px}
+.shot{margin:0 0 12px;padding:8px;break-inside:avoid}
+.shot .zoom{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:10px}
+.shot img{display:block;width:100%;height:auto;border-radius:10px}
+.shot figcaption{padding:10px 6px 4px;font-size:.88rem;line-height:1.35}
+.shot figcaption b{display:block;font-weight:700;color:var(--ice)}
+.shot figcaption span{display:block;font-family:var(--mono);font-weight:500;font-size:.68rem;color:var(--dim);margin-top:4px}
+.pw{columns:2;column-gap:12px}
+.pclip{max-height:580px;overflow:hidden;position:relative}
+.pclip::after{content:"";position:absolute;left:0;right:0;bottom:0;height:160px;background:linear-gradient(180deg,transparent,#000 85%);pointer-events:none}
+.pclip.open{max-height:none}
+.pclip.open::after{display:none}
+.pw .shot figcaption{font-size:.78rem;padding:8px 4px 2px}
+.pmore{width:100%;margin-top:6px}
+@media(min-width:900px){
+  .prints{columns:3;column-gap:16px}
+  .pf,.pclip,.pw{display:contents}
+  .pclip::after{display:none}
+  .shot{margin-bottom:16px;padding:10px}
+  .pw .shot figcaption{font-size:.88rem;padding:10px 6px 4px}
+  .pmore{display:none}
 }
-.tseg{font-family:var(--mono);font-weight:500;font-size:.7rem;color:var(--cyan);margin-top:auto;padding-top:8px}
-.feat{margin-top:14px;padding:26px 22px}
-@media(min-width:900px){.feat{margin-top:16px;padding:38px 40px}}
-.feat .bub{font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:clamp(1.08rem,3.6vw,1.4rem);line-height:1.4;padding:18px 22px;border-radius:6px 22px 22px 22px}
+.lb{border:0;padding:0;background:transparent;margin:auto;max-width:100vw;max-height:100vh;overflow:visible}
+.lb::backdrop{background:rgba(0,0,0,.9)}
+.lb img{display:block;width:auto;height:auto;max-width:min(94vw,760px);max-height:88vh;max-height:88dvh;border-radius:14px;border:1px solid var(--line);box-shadow:0 30px 90px #000}
+.lb-x{position:fixed;top:14px;right:14px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.75);color:var(--ice);font-size:1.6rem;line-height:1;cursor:pointer}
 .ghead{
   display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;width:fit-content;max-width:100%;
   margin-top:52px;padding:14px 22px;border:1px solid var(--line);border-radius:16px;
@@ -328,6 +343,25 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .box.off h3{color:var(--dim)}
 .box.off li span{color:var(--dim)}
 .head .plus{margin-top:26px}
+
+/* esteira de serviços */
+.menu{border-top:1px solid var(--line)}
+.item{display:grid;gap:6px 24px;padding:22px 0;border-bottom:1px solid var(--line)}
+@media(min-width:640px){.item{grid-template-columns:minmax(0,.85fr) minmax(0,1fr);align-items:baseline}}
+.item p{color:var(--dim);font-size:.97rem}
+.item.main h3{color:var(--cyan)}
+.note{margin-top:22px;padding:14px 18px;border-left:2px solid var(--cyan);background:rgba(47,227,236,.06);border-radius:0 12px 12px 0;font-size:.98rem;max-width:44ch}
+.head .btn{margin-top:22px}
+
+/* quem conduz */
+.who{display:grid;gap:30px;align-items:center}
+.portrait{margin:0;padding:10px;max-width:280px}
+.portrait img{display:block;width:100%;height:auto;border-radius:10px}
+.who h2{max-width:none}
+@media(min-width:900px){
+  .who{grid-template-columns:minmax(0,.66fr) minmax(0,1fr);gap:64px}
+  .portrait{max-width:none}
+}
 
 /* form */
 .form .row{margin-bottom:16px}
@@ -368,8 +402,10 @@ footer .legal{margin-top:14px;font-size:.78rem}
 
 /* notebook de tela baixa: aperta o hero pra calculadora caber */
 @media(min-width:980px) and (max-height:820px){
-  .hero{padding-top:36px}
-  .hcopy{margin-bottom:28px}
+  .hero{padding-top:28px}
+  .hcopy{margin-bottom:24px}
+  .byline{margin-bottom:14px}
+  .byline img{width:40px;height:40px}
   .hcopy h1{font-size:2.7rem}
   .calc-in{padding-top:22px}
   .field{margin-bottom:14px}
@@ -407,7 +443,10 @@ footer .legal{margin-top:14px;font-size:.78rem}
   <div class="wrap">
     <div class="hcopy">
       <div>
-        <div class="where">De Campo Grande, MS, para o Brasil inteiro</div>
+        <a class="byline" href="#quem">
+          <img src="/assets/gio-avatar.webp" width="48" height="48" alt="">
+          <span><b>Giovanny Barbosa</b>, fundador da Avence<small>De Campo Grande, MS, para o Brasil inteiro</small></span>
+        </a>
         <h1>Vale a pena investir em anúncios pro seu negócio?</h1>
       </div>
       <div>
@@ -530,45 +569,98 @@ footer .legal{margin-top:14px;font-size:.78rem}
       <div class="frame pstat"><div class="n"><span class="num">3x</span></div><div class="l">o faturamento de uma cliente de estética depois da parceria</div></div>
     </div>
 
-    <div class="frame tcard feat">
-      <div class="bub">Eu já tinha desistido de investir no digital, achei que realmente não era pra mim.</div>
-      <div class="bub">É como se vc tirasse uma venda dos meus olhos, agora eu enxerguei a solução.</div>
-      <div class="tseg">mensagem recebida de uma cliente</div>
+    <p class="taphint">Toque em qualquer print pra ampliar.</p>
+    <div class="prints">
+      <div class="pf">
+        <figure class="frame shot">
+          <button type="button" class="zoom" aria-label="Ampliar print: R$ 3.738 em anúncio, R$ 395 mil em venda">
+            <img src="/assets/prints/roi.webp" width="632" height="779" alt="Print de conversa no WhatsApp. Cliente: quanto gastamos mês passado? Avence: R$ 3.738,53. Cliente: 395 mil de venda. Avence: tivemos um ROI de 105,65." loading="lazy" decoding="async">
+          </button>
+          <figcaption><b>R$ 3.738 em anúncio, R$ 395 mil em venda</b><span>abr 2024</span></figcaption>
+        </figure>
+        <figure class="frame shot">
+          <button type="button" class="zoom" aria-label="Ampliar print: R$ 651 mil no melhor mês do ano">
+            <img src="/assets/prints/651k.webp" width="760" height="392" alt="Print de conversa no WhatsApp. Cliente: Mano, julho foi o melhor mês do ano! Batemos 651k. Agosto já começou fervendo. Sábado 65k, hoje 30k. Meta de agosto 600 mil." loading="lazy" decoding="async">
+          </button>
+          <figcaption><b>R$ 651 mil no melhor mês do ano</b></figcaption>
+        </figure>
+      </div>
+      <div class="pclip" id="pclip"><div class="pw">
+        <figure class="frame shot">
+          <button type="button" class="zoom" aria-label="Ampliar print: Faturamento triplicou">
+            <img src="/assets/prints/triplicou.webp" width="760" height="1133" alt="Print de grupo no WhatsApp, com os nomes cobertos. Cliente: nosso faturamento triplicou depois que fechamos parceria com vc. Outra pessoa do grupo: Isso é verdade. Melhor decisão que tomamos até hoje." loading="lazy" decoding="async">
+          </button>
+          <figcaption><b>Faturamento triplicou</b><span>estética, mar 2026</span></figcaption>
+        </figure>
+        <figure class="frame shot">
+          <button type="button" class="zoom" aria-label="Ampliar print: R$ 140 mil em 10 horas">
+            <img src="/assets/prints/140mil.webp" width="760" height="855" alt="Print de grupo no WhatsApp. Cliente: Passando pra dar um feedback generoso! Em 10hs faturamos 140 mil. Gratidão pelo empenho e trabalho de todos em conjunto com nossa equipe! Batemos mais um recorde. 2025 promete." loading="lazy" decoding="async">
+          </button>
+          <figcaption><b>R$ 140 mil em 10 horas</b><span>jan 2025</span></figcaption>
+        </figure>
+        <figure class="frame shot">
+          <button type="button" class="zoom" aria-label="Ampliar print: Ia vender tudo e arrumar um emprego">
+            <img src="/assets/prints/emprego.webp" width="760" height="519" alt="Print de conversa no WhatsApp. Cliente: Queria dizer que estou muito contente com os resultados. Estava bem difícil pra mim conseguir clientes, já estava pensando em vender tudo e arrumar um emprego. Vocês são top." loading="lazy" decoding="async">
+          </button>
+          <figcaption><b>Ia vender tudo e arrumar um emprego</b><span>dez 2022</span></figcaption>
+        </figure>
+        <figure class="frame shot">
+          <button type="button" class="zoom" aria-label="Ampliar print: Tinha desistido do digital">
+            <img src="/assets/prints/desistido.webp" width="760" height="481" alt="Print de conversa no WhatsApp. Cliente: Giovani, quero te agradecer! Eu já tinha desistido de investir no digital, achei que realmente não era pra mim. Sua didática é ótima, é como se vc tirasse uma venda dos meus olhos, agora eu enxerguei a solução." loading="lazy" decoding="async">
+          </button>
+          <figcaption><b>Tinha desistido do digital</b></figcaption>
+        </figure>
+        <figure class="frame shot">
+          <button type="button" class="zoom" aria-label="Ampliar print: Mês fechado em 407k">
+            <img src="/assets/prints/407k.webp" width="760" height="1211" alt="Print de grupo no WhatsApp, com nomes e fotos cobertos. Cliente: 403k em 31/08/24, mas o dia ainda não acabou. Atualizando: 407. Meus amigos, muito obrigado pelo trabalho prestado esse mês! Se preparem que mês que vem 550k no mínimo!" loading="lazy" decoding="async">
+          </button>
+          <figcaption><b>Mês fechado em 407k</b><span>ago 2024</span></figcaption>
+        </figure>
+        <figure class="frame shot">
+          <button type="button" class="zoom" aria-label="Ampliar print: Loja cheia na Mega Promoção">
+            <img src="/assets/prints/modas.webp" width="760" height="678" alt="Print de conversa no WhatsApp. Cliente: Como proprietária da loja, quero agradecer ao Giovany e a equipe da Avence Brasil pelo excelente serviço prestado. Lançamos uma Mega Promoção na loja e precisava divulgar, então contratei o serviço da Avence Brasil, e o resultado foi maravilhoso, muita procura no WhatsApp convertida em vendas, loja cheia, clientes de todos os bairros. Realmente o tráfego pago vale a pena." loading="lazy" decoding="async">
+          </button>
+          <figcaption><b>Loja cheia na Mega Promoção</b><span>loja de moda, jul 2025</span></figcaption>
+        </figure>
+        <figure class="frame shot">
+          <button type="button" class="zoom" aria-label="Ampliar print: 9 fechamentos com 2 dias de trabalho">
+            <img src="/assets/prints/2dias.webp" width="760" height="1349" alt="Print de conversa no WhatsApp. Cliente: Gostaria de te agradecer pela excelência no trabalho. Estão vindo vários clientes e são apenas 2 dias de trabalho. Ontem foram 3 e hoje deu 9 fechamentos." loading="lazy" decoding="async">
+          </button>
+          <figcaption><b>9 fechamentos com 2 dias de trabalho</b><span>dez 2024</span></figcaption>
+        </figure>
+        <figure class="frame shot">
+          <button type="button" class="zoom" aria-label="Ampliar print: Melhor resultado entre as agências">
+            <img src="/assets/prints/agencias.webp" width="760" height="391" alt="Print de conversa no WhatsApp. Cliente: Olha, conseguimos melhorar bem o impulsionamento. Digo que das agências que trabalhamos vocês conseguiram nos trazer um melhor resultado." loading="lazy" decoding="async">
+          </button>
+          <figcaption><b>Melhor resultado entre as agências</b><span>Uberlândia, MG, abr 2024</span></figcaption>
+        </figure>
+        <figure class="frame shot">
+          <button type="button" class="zoom" aria-label="Ampliar print: Chamada absurda no WhatsApp">
+            <img src="/assets/prints/vestuario.webp" width="760" height="495" alt="Print de conversa no WhatsApp. Cliente: Esse final de semana teve uma chamada absurda no Whats. Muita gente mesmo. E tivemos vendas desses mesmos clientes que chamaram no Whats. Desde quarta da semana fazendo venda on-line, com cliente pedindo pra entregar. E tivemos 2 clientes que chamaram Whats e foram até a loja pra fechar." loading="lazy" decoding="async">
+          </button>
+          <figcaption><b>Chamada absurda no WhatsApp</b><span>vestuário</span></figcaption>
+        </figure>
+        <figure class="frame shot">
+          <button type="button" class="zoom" aria-label="Ampliar print: Leads melhoraram bastante">
+            <img src="/assets/prints/leads.webp" width="760" height="232" alt="Print de conversa no WhatsApp. Cliente: Passando para dar um feedback. Os leads melhoraram bastante. Digo em questão de clientes. Estão demonstrando mais interesse e também estão dentro dos clientes que atendemos." loading="lazy" decoding="async">
+          </button>
+          <figcaption><b>Leads melhoraram bastante</b><span>varejo de alto padrão, Uberlândia, fev 2025</span></figcaption>
+        </figure>
+        <figure class="frame shot">
+          <button type="button" class="zoom" aria-label="Ampliar print: Muito lead de atacado no fim de semana">
+            <img src="/assets/prints/findis.webp" width="735" height="249" alt="Print de conversa no WhatsApp. Cliente: olha, passando pra avisar que ontem chegou muito lead de atacado. Foi um fds muito bom. Muito obrigada, seu trabalho é excelente." loading="lazy" decoding="async">
+          </button>
+          <figcaption><b>Muito lead de atacado no fim de semana</b><span>estética</span></figcaption>
+        </figure>
+        <figure class="frame shot">
+          <button type="button" class="zoom" aria-label="Ampliar print: Recorde de vendas no mês">
+            <img src="/assets/prints/recorde.webp" width="760" height="167" alt="Print de conversa no WhatsApp. Cliente: Batemos record de vendas esse mês. Falta amanhã ainda." loading="lazy" decoding="async">
+          </button>
+          <figcaption><b>Recorde de vendas no mês</b><span>nov 2025</span></figcaption>
+        </figure>
+      </div></div>
     </div>
-
-    <div class="grid2 swipe" tabindex="0" aria-label="Mensagens de clientes">
-      <div class="frame tcard">
-        <div class="bub">Lançamos uma Mega Promoção na loja e precisava divulgar, então contratei o serviço da Avence.</div>
-        <div class="bub">O resultado foi maravilhoso, muita procura no WhatsApp convertida em vendas, loja cheia, clientes de todos os bairros. Realmente o tráfego pago vale a pena.</div>
-        <div class="tseg">loja de moda</div>
-      </div>
-      <div class="frame tcard">
-        <div class="bub">Gostaria de te agradecer pela excelência no trabalho. Estão vindo vários clientes e são apenas 2 dias de trabalho.</div>
-        <div class="bub">Ontem foram 3 e hoje deu 9 fechamentos.</div>
-        <div class="tseg">com 2 dias de trabalho</div>
-      </div>
-      <div class="frame tcard">
-        <div class="bub">Mano, julho foi o melhor mês do ano!!! Batemos 651k.</div>
-        <div class="bub">Agosto já começou fervendo. Sábado 65k, hoje 30k.</div>
-        <div class="tseg">fechamento do mês de julho</div>
-      </div>
-      <div class="frame tcard">
-        <div class="bub">Passando pra dar um feedback generoso! Em 10hs faturamos 140 mil.</div>
-        <div class="bub">Batemos mais um recorde!</div>
-        <div class="tseg">novo recorde do cliente</div>
-      </div>
-      <div class="frame tcard">
-        <div class="bub">Nosso faturamento triplicou depois que fechamos parceria com vc.</div>
-        <div class="bub">Melhor decisão que tomamos até hoje.</div>
-        <div class="tseg">cliente de estética</div>
-      </div>
-      <div class="frame tcard">
-        <div class="bub">Olha, conseguimos melhorar bem o impulsionamento.</div>
-        <div class="bub">Digo que das agências que trabalhamos vocês conseguiram nos trazer um melhor resultado.</div>
-        <div class="tseg">cliente em Uberlândia, MG</div>
-      </div>
-    </div>
-    <p class="swipehint">Arrasta pro lado pra ver mais mensagens.</p>
+    <button type="button" class="btn ghost pmore" id="pmore">Ver todos os 14 prints</button>
 
     <div class="ghead">
       <span class="gscore">5,0</span>
@@ -595,7 +687,7 @@ footer .legal{margin-top:14px;font-size:.78rem}
     </div>
 
     <a class="glink" href="https://www.google.com/maps/search/Avence+Performance+Ag%C3%AAncia+de+Marketing+Digital+Campo+Grande" target="_blank" rel="noopener">Ver todas as avaliações no Google</a>
-    <p class="pnote">Mensagens reais de clientes, com os nomes preservados. Resultado varia com produto, verba e operação.</p>
+    <p class="pnote">Prints reais de conversas com clientes, com nomes e fotos cobertos. Resultado varia com produto, verba e operação.</p>
   </div>
 </section>
 
@@ -636,30 +728,44 @@ footer .legal{margin-top:14px;font-size:.78rem}
 
 <div class="rule"></div>
 
-<!-- VEM JUNTO -->
-<section class="sec">
-  <div class="wrap">
-    <h2>O anúncio é só metade do trabalho</h2>
-    <p class="lede">Anúncio sozinho traz contato. O que transforma contato em venda é o que vem depois, e isso vem junto com a gestão.</p>
+<!-- ESTEIRA -->
+<section class="sec" id="servicos">
+  <div class="wrap split">
+    <div class="head">
+      <h2>Tudo que a sua empresa precisar no digital</h2>
+      <p class="lede">Além da gestão de tráfego pago, a Avence tem uma esteira completa de serviços pra sua operação.</p>
+      <p class="note">Orçamento sob medida, personalizado de acordo com a necessidade de cada operação.</p>
+      <a class="btn" id="zapServ" href="#diagnostico">Pedir orçamento no WhatsApp</a>
+    </div>
 
-    <div class="duo">
-      <div class="frame box">
-        <h3>Vídeo profissional feito pra vender</h3>
-        <ul class="plus">
-          <li><span>+</span>Equipe própria de vídeo, sem terceirizar nada</li>
-          <li><span>+</span>Roteiro pensado pra prender nos 3 primeiros segundos</li>
-          <li><span>+</span>Você não precisa gravar nem contratar produtora</li>
-          <li><span>+</span>Material novo sempre que o anterior começa a cansar</li>
-        </ul>
+    <div class="menu">
+      <div class="item main">
+        <h3>Gestão de tráfego pago</h3>
+        <p>Meta Ads e Google Ads, do diagnóstico ao ajuste semanal. É o nosso carro-chefe.</p>
       </div>
-      <div class="frame box">
-        <h3>Sistemas personalizados e agentes de IA</h3>
-        <ul class="plus">
-          <li><span>+</span>Se a sua empresa tem regra própria de trabalho, criamos o sistema sob medida</li>
-          <li><span>+</span>Um cliente nosso tem CRM, atendimento por IA e resultado dos anúncios no mesmo painel</li>
-          <li><span>+</span>A IA responde na hora, de madrugada e no fim de semana, e passa pra equipe quando o cliente está pronto</li>
-          <li><span>+</span>Tudo num canal privado só seu, sem depender de cinco ferramentas soltas</li>
-        </ul>
+      <div class="item">
+        <h3>Mentoria individual</h3>
+        <p>Encontros um a um pra quem quer aprender a gerenciar os próprios anúncios.</p>
+      </div>
+      <div class="item">
+        <h3>Video maker em Campo Grande</h3>
+        <p>Video makers locais gravam na sua empresa. Disponível pra empresas de Campo Grande, MS.</p>
+      </div>
+      <div class="item">
+        <h3>Social media</h3>
+        <p>Gestão das redes sociais da sua empresa.</p>
+      </div>
+      <div class="item">
+        <h3>Design e artes</h3>
+        <p>Artes pros anúncios, pro feed e pro que mais a sua marca precisar.</p>
+      </div>
+      <div class="item">
+        <h3>Sites e landing pages</h3>
+        <p>Criação de site e de landing page pro seu negócio.</p>
+      </div>
+      <div class="item">
+        <h3>Sistemas e agentes de IA</h3>
+        <p>CRM, automações e atendimento por IA, criados sob medida pra regra de trabalho da sua empresa.</p>
       </div>
     </div>
   </div>
@@ -698,6 +804,22 @@ footer .legal{margin-top:14px;font-size:.78rem}
 
 <div class="rule"></div>
 
+<!-- QUEM CONDUZ -->
+<section class="sec" id="quem">
+  <div class="wrap who">
+    <figure class="frame portrait">
+      <img src="/assets/gio.webp" width="720" height="900" alt="Giovanny Barbosa, fundador da Avence Performance" loading="lazy" decoding="async">
+    </figure>
+    <div>
+      <h2>Quem conduz a estratégia</h2>
+      <p class="lede">Giovanny Barbosa é o fundador da Avence. Trabalha com tráfego pago em Meta e Google Ads há 6 anos, atendendo negócios locais e digitais a partir de Campo Grande, MS. É ele quem desenha a estratégia de tráfego das contas.</p>
+      <a class="glink" href="https://www.instagram.com/giobarbosads/" target="_blank" rel="noopener">Ver o perfil no Instagram, @giobarbosads</a>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
 <!-- FORM -->
 <section class="sec" id="diagnostico">
   <div class="wrap split">
@@ -706,6 +828,7 @@ footer .legal{margin-top:14px;font-size:.78rem}
       <p class="lede">O diagnóstico é gratuito. Preenche os dados, a conversa abre direto no WhatsApp e a gente responde no mesmo dia.</p>
       <ul class="plus">
         <li><span>+</span>Diagnóstico gratuito, com os seus números</li>
+        <li><span>+</span>Orçamento sob medida pra sua operação</li>
         <li><span>+</span>Resposta no mesmo dia</li>
         <li><span>+</span>Sem contrato longo pra te prender</li>
         <li><span>+</span>Campanhas no ar em até 48h depois do diagnóstico</li>
@@ -750,7 +873,7 @@ footer .legal{margin-top:14px;font-size:.78rem}
   <img class="art" src="/assets/art.jpg" width="760" height="760" alt="Avence Performance" loading="lazy" decoding="async">
   <p>
     Equipe em Campo Grande, MS. Atendimento nacional.<br>
-    Tráfego pago, social media, vídeo, sites e IA.
+    Tráfego pago, mentoria, vídeo, social media, design, sites e IA.
   </p>
   <p class="legal">
     Avence Performance é uma marca de AVENCE BRASIL MARKETING LTDA<br>
@@ -762,6 +885,10 @@ footer .legal{margin-top:14px;font-size:.78rem}
 </footer>
 
 </div>
+
+<dialog class="lb" id="lb" aria-label="Print ampliado">
+  <button type="button" class="lb-x" id="lbX" aria-label="Fechar">×</button>
+</dialog>
 
 <div class="mbar">
   <a class="btn" id="zapBar" href="#diagnostico">Falar com Estrategista</a>
@@ -861,6 +988,10 @@ calcular();
   }
 });
 
+el("zapServ").href = linkZap("Oi! Quero um orçamento sob medida pra minha empresa. [" + CONFIG.origem + " | servicos]");
+el("zapServ").target = "_blank";
+el("zapServ").rel = "noopener";
+
 el("fDireto").href = linkZap("Oi! Quero falar com um estrategista sobre anúncios. [" + CONFIG.origem + " | sem-formulario]");
 el("fDireto").target = "_blank";
 el("fDireto").rel = "noopener";
@@ -886,6 +1017,20 @@ el("fSend").addEventListener("click", () => {
 
   window.open(linkZap(texto), "_blank");
 });
+
+/* ---------- Prints: ampliar e ver todos ---------- */
+const lb = el("lb"), lbImg = new Image();
+document.querySelectorAll(".zoom").forEach(b => b.addEventListener("click", () => {
+  const i = b.querySelector("img");
+  if (!lb.showModal){ window.open(i.src, "_blank"); return; }
+  lbImg.src = i.currentSrc || i.src;
+  lbImg.alt = i.alt;
+  if (!lbImg.isConnected) lb.appendChild(lbImg);
+  lb.showModal();
+}));
+el("lbX").addEventListener("click", () => lb.close());
+lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
+el("pmore").addEventListener("click", () => { el("pclip").classList.add("open"); el("pmore").hidden = true; });
 
 /* ---------- Barra do celular sai de cena quando o formulário aparece ---------- */
 if ("IntersectionObserver" in window){
