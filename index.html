@@ -174,6 +174,20 @@ input[type=range]:focus-visible{outline:2px solid var(--hot);outline-offset:8px}
 /* cards */
 .cards{display:grid;gap:14px;margin-top:36px}
 @media(min-width:900px){.cards{grid-template-columns:repeat(2,1fr);gap:16px}}
+
+/* prova social */
+.proofstats{display:grid;gap:12px;margin-top:36px}
+@media(min-width:900px){.proofstats{grid-template-columns:repeat(3,1fr);gap:16px}}
+.pstat{border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,var(--panel),rgba(3,8,10,.7));padding:26px 18px;text-align:center}
+.pstat .n{font-family:var(--display);font-weight:800;font-size:1.75rem;letter-spacing:-.04em;line-height:1}
+.pstat .l{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:11px;line-height:1.7}
+.tcard{background:linear-gradient(180deg,var(--panel),rgba(3,8,10,.7));border:1px solid var(--line);border-radius:14px;padding:22px;text-align:left;display:flex;flex-direction:column;gap:10px}
+.bub{background:var(--panel2);border:1px solid var(--line);border-radius:3px 14px 14px 14px;padding:12px 15px;font-size:.92rem;line-height:1.55;color:var(--paper);max-width:94%}
+.tseg{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-top:6px}
+.gbadge{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:15px 24px;border:1px solid var(--deepcyan);border-radius:999px;font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);text-decoration:none;transition:border-color .2s}
+.gbadge:hover{border-color:var(--cyan)}
+.gbadge .gstar{color:var(--cyan);font-size:.95rem}
+.pnote{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:20px;line-height:1.9}
 .card{
   background:linear-gradient(180deg,var(--panel),rgba(3,8,10,.7));
   border:1px solid var(--line);border-radius:14px;padding:28px 22px;text-align:center;
@@ -362,6 +376,54 @@ footer p{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-tran
 <div class="rule"></div>
 
 <!-- COMO FUNCIONA -->
+<section class="sec">
+  <div class="wrap rise">
+    <div class="eyebrow">Quem já roda com a gente</div>
+    <h2>Resultado de verdade,<br><span class="grad">contado pelo cliente</span></h2>
+    <p class="lede">Mensagens reais do WhatsApp de quem anuncia com a Avence. Os nomes ficam de fora, os números não.</p>
+
+    <div class="proofstats">
+      <div class="pstat"><div class="n"><span class="grad">R$ 651 mil</span></div><div class="l">Melhor mês de um varejo de moda</div></div>
+      <div class="pstat"><div class="n"><span class="grad">R$ 140 mil</span></div><div class="l">Faturados em 10 horas num atacado</div></div>
+      <div class="pstat"><div class="n"><span class="grad">3x</span></div><div class="l">Faturamento de um clube de assinatura</div></div>
+    </div>
+
+    <div class="cards">
+      <div class="tcard">
+        <div class="bub">Mano, julho foi o melhor mês do ano!!! Batemos 651k.</div>
+        <div class="bub">Agosto já começou fervendo. Meta de agosto: 600 mil.</div>
+        <div class="tseg">Varejo de moda</div>
+      </div>
+      <div class="tcard">
+        <div class="bub">Passando pra dar um feedback generoso! Em 10hs faturamos 140 mil. Batemos mais um recorde!</div>
+        <div class="tseg">Atacado</div>
+      </div>
+      <div class="tcard">
+        <div class="bub">Nosso faturamento triplicou depois que fechamos parceria com vc.</div>
+        <div class="bub">Melhor decisão que tomamos até hoje.</div>
+        <div class="tseg">Clube de assinatura, dois sócios</div>
+      </div>
+      <div class="tcard">
+        <div class="bub">Das agências que trabalhamos, vocês conseguiram nos trazer o melhor resultado.</div>
+        <div class="tseg">Varejo de alto padrão, Uberlândia MG</div>
+      </div>
+      <div class="tcard">
+        <div class="bub">Lançamos uma Mega Promoção na loja e o resultado foi maravilhoso. Muita procura no WhatsApp convertida em vendas, loja cheia, clientes de todos os bairros.</div>
+        <div class="tseg">Loja de moda feminina</div>
+      </div>
+      <div class="tcard">
+        <div class="bub">Eu já tinha desistido de investir no digital, achei que realmente não era pra mim. Agora eu enxerguei a solução.</div>
+        <div class="tseg">Clínica de fisioterapia e estética</div>
+      </div>
+    </div>
+
+    <a class="gbadge" href="https://www.google.com/maps/search/Avence+Performance+Ag%C3%AAncia+de+Marketing+Digital+Campo+Grande" target="_blank" rel="noopener">
+      <span class="gstar">★</span> Avaliações no Google <span>→</span>
+    </a>
+    <p class="pnote">Mensagens compartilhadas com autorização dos clientes.<br>Resultado varia com produto, verba e operação.</p>
+  </div>
+</section>
+
 <section class="sec">
   <div class="wrap rise">
     <div class="eyebrow">Como a gente trabalha</div>
