@@ -2,15 +2,18 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+<meta name="color-scheme" content="dark">
+<meta name="apple-mobile-web-app-title" content="Avence">
 <title>Avence Performance | Gestão de tráfego para todo o Brasil</title>
-<meta name="description" content="Gestão de Meta e Google Ads para empresas de todo o Brasil. Equipe em Campo Grande, MS. Descubra em 10 segundos se anunciar vale a pena pro seu negócio.">
+<meta name="description" content="Agência de tráfego pago. A Avence Performance planeja, cria e gerencia anúncios no Instagram, no Facebook e no Google para empresas de todo o Brasil. Equipe em Campo Grande, MS.">
 <link rel="canonical" href="https://avencebrasil.com.br/">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Avence Performance">
-<meta property="og:title" content="Vale a pena investir em anúncios pro seu negócio?">
-<meta property="og:description" content="A gente faz a conta com você em 10 segundos. Gestão de Meta e Google Ads, campanhas no ar em até 48h. Equipe em Campo Grande, atendimento nacional.">
+<meta property="og:title" content="Avence Performance | Agência de tráfego pago">
+<meta property="og:description" content="Planejamos, criamos e gerenciamos anúncios no Instagram, no Facebook e no Google para empresas de todo o Brasil. Equipe em Campo Grande, MS.">
 <meta property="og:url" content="https://avencebrasil.com.br/">
 <meta property="og:image" content="https://avencebrasil.com.br/assets/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -31,7 +34,7 @@
   "url": "https://avencebrasil.com.br/",
   "image": "https://avencebrasil.com.br/assets/og.jpg",
   "logo": "https://avencebrasil.com.br/assets/icon-180.png",
-  "description": "Gestão de Meta Ads e Google Ads para empresas de todo o Brasil.",
+  "description": "Agência de tráfego pago. Planeja, cria e gerencia anúncios no Meta e no Google para empresas de todo o Brasil.",
   "telephone": "+55 67 99814-9663",
   "email": "avenceperformance@gmail.com",
   "areaServed": "BR",
@@ -68,19 +71,22 @@
   --body:'Manrope',system-ui,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
   --max:1080px;
+  --head:66px;   /* altura do topo fixo */
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;background:#000}
 body{
   background:var(--black);color:var(--ice);
   font-family:var(--body);font-size:16.5px;line-height:1.6;
-  overflow-x:hidden;padding-bottom:86px;
+  overflow-x:hidden;overflow-x:clip;padding-bottom:calc(86px + env(safe-area-inset-bottom));
   -webkit-font-smoothing:antialiased;
 }
 @media(min-width:900px){body{font-size:17.5px;padding-bottom:0}}
 ::selection{background:var(--cyan);color:var(--black)}
 :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
 img{max-width:100%}
+a,button,input,select,label{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+button,input,select{font:inherit;margin:0}
 
 /* fundo */
 #circuit{position:fixed;top:0;left:0;width:100%;height:100vh;height:100lvh;z-index:0;pointer-events:none;opacity:.5}
@@ -92,15 +98,15 @@ img{max-width:100%}
 .page{position:relative;z-index:1}
 
 /* base */
-.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
-@media(min-width:900px){.wrap{padding:0 32px}}
-.sec{padding:76px 0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 max(22px,env(safe-area-inset-right)) 0 max(22px,env(safe-area-inset-left))}
+@media(min-width:900px){.wrap{padding:0 max(32px,env(safe-area-inset-right)) 0 max(32px,env(safe-area-inset-left))}}
+.sec{padding:64px 0}
 @media(min-width:900px){.sec{padding:116px 0}}
-[id]{scroll-margin-top:84px}
+[id]{scroll-margin-top:calc(var(--head) + 18px)}
 .rule{height:1px;background:linear-gradient(90deg,transparent,var(--line) 18%,var(--line) 82%,transparent)}
 
 h1,h2{font-family:var(--display);font-weight:800;letter-spacing:-.04em;line-height:1.04;text-wrap:balance}
-h1{font-size:clamp(2.2rem,8.6vw,3.55rem)}
+h1{font-size:clamp(1.6rem,8.2vw,3.05rem)}
 h2{font-size:clamp(1.8rem,5.4vw,2.7rem);max-width:19ch}
 h3{font-family:var(--display);font-weight:700;letter-spacing:-.02em;font-size:1.1rem;line-height:1.3}
 .lede{color:var(--dim);max-width:56ch;margin-top:18px;font-size:1.04rem}
@@ -110,6 +116,7 @@ h3{font-family:var(--display);font-weight:700;letter-spacing:-.02em;font-size:1.
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 b{color:var(--ice);font-weight:700}
+p,li,figcaption{text-wrap:pretty}
 
 .split{display:grid;gap:40px}
 @media(min-width:980px){
@@ -134,83 +141,144 @@ b{color:var(--ice);font-weight:700}
   box-shadow:0 0 0 1px rgba(47,227,236,.25),0 12px 36px -14px rgba(47,227,236,.55);
   transition:transform .15s,box-shadow .15s;
 }
-.btn:hover{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(47,227,236,.5),0 16px 44px -14px rgba(47,227,236,.7)}
-.btn:active{transform:none}
+.btn{-webkit-appearance:none;appearance:none}
+@media(hover:hover){.btn:hover{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(47,227,236,.5),0 16px 44px -14px rgba(47,227,236,.7)}}
+.btn:active{transform:scale(.985)}
 .btn.ghost{background:rgba(0,0,0,.4);color:var(--ice);box-shadow:inset 0 0 0 1px var(--line)}
-.btn.ghost:hover{box-shadow:inset 0 0 0 1px var(--deepcyan)}
+@media(hover:hover){.btn.ghost:hover{box-shadow:inset 0 0 0 1px var(--deepcyan)}}
 
 /* topo */
-header{
-  position:sticky;top:0;z-index:50;
+header{position:sticky;top:0;z-index:50}
+header::before{
+  content:"";position:absolute;top:0;right:0;bottom:0;left:0;z-index:-1;
   background:rgba(0,0,0,.78);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
   border-bottom:1px solid var(--line);
 }
-.bar{max-width:var(--max);margin:0 auto;padding:11px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.bar{max-width:var(--max);margin:0 auto;padding:11px max(22px,env(safe-area-inset-right)) 11px max(22px,env(safe-area-inset-left));display:flex;align-items:center;justify-content:space-between;gap:16px}
 @media(min-width:900px){.bar{padding:12px 32px}}
 .brand{
-  display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ice);
+  display:flex;align-items:center;gap:12px;min-height:44px;text-decoration:none;color:var(--ice);
   font-family:var(--display);font-weight:700;font-size:1.02rem;letter-spacing:-.02em;
 }
 .brand img{width:38px;height:38px;border-radius:10px;display:block;box-shadow:0 0 0 1px var(--line),0 0 18px rgba(47,227,236,.3)}
 .brand em{font-style:normal;font-weight:600;color:var(--dim)}
 .bar .btn{display:none;padding:10px 18px;font-size:.84rem}
 @media(min-width:900px){.bar .btn{display:inline-flex}}
-
-/* hero */
-.hero{padding:44px 0 60px}
-@media(min-width:980px){.hero{padding:48px 0 96px}}
-.hcopy{margin-bottom:32px}
-@media(min-width:980px){
-  .hcopy{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:end;margin-bottom:36px}
-  .hcopy h1{font-size:3.15rem}
-  .hcopy .lede{margin-top:0}
+.nav{display:none}
+@media(min-width:1040px){
+  .nav{display:flex;gap:28px;margin-left:auto;margin-right:10px}
+  .nav a{font-size:.86rem;font-weight:600;color:var(--dim);text-decoration:none;padding:12px 0;transition:color .15s}
 }
-.byline{display:inline-flex;align-items:center;gap:12px;margin-bottom:22px;text-decoration:none;color:var(--ice);font-size:.92rem;line-height:1.35}
-.byline img{flex:none;width:48px;height:48px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--black),0 0 0 3px var(--deepcyan),0 0 18px rgba(47,227,236,.35)}
-.byline b{font-weight:700}
-.byline small{display:block;font-family:var(--mono);font-weight:500;font-size:.7rem;color:var(--dim);margin-top:3px}
-.byline:hover b{color:var(--cyan)}
-.hnote{display:none;margin-top:16px;font-size:.92rem}
-.hnote a{color:var(--cyan);font-weight:700;text-underline-offset:4px}
-.hnote a:hover{color:var(--hot)}
-@media(min-width:980px){.hnote{display:block}}
+@media(hover:hover){.nav a:hover{color:var(--ice)}}
 
-.load .hcopy,.load .calc{opacity:0;transform:translateY(14px);animation:up .7s cubic-bezier(.2,.7,.2,1) forwards}
-.load .calc{animation-delay:.14s}
+/* hero: quem é a Avence */
+.hero{padding:30px 0 58px}
+.hgrid{display:grid;gap:30px}
+.hcopy .lede{font-size:1.06rem}
+.hcta{display:grid;gap:10px;margin-top:26px}
+.hcta .btn{width:100%}
+@media(min-width:560px){
+  .hcta{display:flex;flex-wrap:wrap;gap:12px}
+  .hcta .btn{width:auto}
+}
+@media(min-width:980px){
+  .hero{padding:68px 0 104px}
+  .hgrid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:60px;align-items:center}
+  .hcopy h1{font-size:min(3.05rem,calc((100vw - 124px) * .05))}
+}
+@media(min-width:980px) and (max-height:760px){.hero{padding:44px 0 76px}}
+
+.load .hcopy,.load .facts{opacity:0;transform:translateY(14px);animation:up .7s cubic-bezier(.2,.7,.2,1) forwards}
+.load .facts{animation-delay:.14s}
 @keyframes up{to{opacity:1;transform:none}}
 
-/* calculadora */
-.calc{
+/* painel: a mesma moldura serve pros números da agência e pra calculadora */
+.panel{
   background:
     linear-gradient(90deg,transparent,rgba(47,227,236,.6),transparent) top center/80% 1px no-repeat,
     linear-gradient(180deg,var(--panel),rgba(0,0,0,.8));
-  border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  border:1px solid var(--line);border-radius:18px;overflow:hidden;overflow:clip;
   box-shadow:0 40px 90px -40px #000,0 0 70px -30px rgba(47,227,236,.35);
 }
-.calc-top{
+.ptop{
   display:flex;align-items:center;gap:10px;padding:13px 20px;
   border-bottom:1px solid var(--line);background:rgba(10,33,42,.45);
   font-family:var(--mono);font-weight:500;font-size:.72rem;color:var(--dim);
 }
-.calc-top .dot{width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.ptop .dot{flex:none;width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+
+/* a Avence em números */
+.fgrid{display:grid;grid-template-columns:1fr 1fr}
+.bstat{padding:24px 14px;text-align:center}
+.bstat:nth-child(even){border-left:1px solid var(--line)}
+.bstat:nth-child(n+3){border-top:1px solid var(--line)}
+.bstat .n{font-family:var(--display);font-weight:800;font-size:clamp(1.45rem,7.2vw,1.85rem);letter-spacing:-.04em;line-height:1;white-space:nowrap}
+.bstat .l{font-size:.8rem;color:var(--dim);margin-top:8px;line-height:1.45}
+.fnote{padding:14px 20px 18px;border-top:1px solid var(--line);font-size:.8rem;color:var(--dim);line-height:1.55;text-align:center}
+@media(min-width:980px){
+  .bstat{padding:30px 18px}
+  .bstat .n{font-size:2.1rem}
+}
+
+/* calculadora */
+.chead{margin-bottom:28px}
+@media(min-width:980px){
+  .chead{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:56px;align-items:end;margin-bottom:40px}
+  .chead h2{max-width:none}
+  .chead .lede{margin-top:0}
+}
 .calc-in{padding:22px 20px 6px}
 @media(min-width:640px){.calc-in{padding:26px 26px 8px}}
 .field{margin-bottom:20px}
 .field .top{display:flex;align-items:baseline;justify-content:space-between;gap:14px}
-.field .q{font-weight:700;font-size:.97rem}
+.field .q{font-weight:700;font-size:.97rem;text-wrap:balance}
 .field .val{font-family:var(--mono);font-weight:700;font-size:1.06rem;color:var(--cyan);white-space:nowrap}
 .field .hint{font-size:.8rem;color:var(--dim);margin:3px 0 6px;max-width:44ch}
-input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:34px;background:transparent;cursor:pointer;--p:50%;display:block}
-input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:999px;background:linear-gradient(90deg,var(--cyan) var(--p),var(--line) var(--p))}
+/* barrinhas. --f é a posição de 0 a 1 (o JS atualiza) e pinta o trilho até o centro da bolinha */
+input[type=range]{
+  -webkit-appearance:none;appearance:none;display:block;width:100%;height:34px;margin:0;
+  background:transparent;cursor:pointer;--f:.5;
+}
+input[type=range]::-webkit-slider-runnable-track{
+  height:6px;border-radius:999px;
+  background:
+    radial-gradient(circle closest-side,var(--cyan) 96%,transparent) left 0 top 0/6px 6px no-repeat,
+    radial-gradient(circle closest-side,var(--line) 96%,transparent) right 0 top 0/6px 6px no-repeat,
+    linear-gradient(90deg,var(--cyan) calc(10px + (100% - 20px) * var(--f,.5)),var(--line) 0) 3px 0/calc(100% - 6px) 100% no-repeat;
+}
 input[type=range]::-webkit-slider-thumb{
-  -webkit-appearance:none;width:26px;height:26px;margin-top:-10px;border-radius:50%;
-  background:var(--ice);border:4px solid var(--cyan);box-shadow:0 0 14px rgba(47,227,236,.7);
+  -webkit-appearance:none;appearance:none;
+  width:26px;height:26px;margin-top:-10px;border:0;border-radius:50%;
+  background:radial-gradient(circle closest-side,var(--ice) 8.5px,var(--cyan) 9.4px);
+  box-shadow:0 0 14px rgba(47,227,236,.7);
+}
+/* tela de toque: a bolinha que aparece tem 30px, mas a área que o dedo pega tem 48px.
+   O Safari do iPhone só arrasta se o dedo cair em cima da bolinha, então a folga invisível faz diferença.
+   A área de toque avança 9px pra cada lado, assim o trilho visível continua alinhado com o texto. */
+@media(pointer:coarse){
+  input[type=range]{height:48px;width:calc(100% + 18px);margin:0 -9px}
+  input[type=range]::-webkit-slider-runnable-track{
+    background:
+      radial-gradient(circle closest-side,var(--cyan) 96%,transparent) left 9px top 0/6px 6px no-repeat,
+      radial-gradient(circle closest-side,var(--line) 96%,transparent) right 9px top 0/6px 6px no-repeat,
+      linear-gradient(90deg,var(--cyan) calc(12px + (100% - 24px) * var(--f,.5)),var(--line) 0) 12px 0/calc(100% - 24px) 100% no-repeat;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    width:48px;height:48px;margin-top:-21px;box-shadow:none;
+    background:radial-gradient(circle closest-side,var(--ice) 10.5px,var(--cyan) 11.4px,var(--cyan) 14.3px,rgba(47,227,236,.4) 15.3px,rgba(47,227,236,0) 100%);
+  }
 }
 input[type=range]::-moz-range-track{height:6px;border-radius:999px;background:var(--line)}
 input[type=range]::-moz-range-progress{height:6px;border-radius:999px;background:var(--cyan)}
 input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--ice);border:4px solid var(--cyan)}
-.out{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);background:rgba(0,0,0,.45)}
-.cell{padding:18px 20px}
+.out{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);background:#04090B}
+@media(max-width:979px){
+  @supports (overflow:clip){
+    /* no celular o resultado acompanha a rolagem enquanto a pessoa mexe nas barrinhas, e solta junto com elas */
+    .out{position:sticky;top:var(--head);z-index:3;box-shadow:0 14px 22px -16px #000}
+  }
+}
+.cell{padding:15px 20px 16px}
 .cell+.cell{border-left:1px solid var(--line)}
 .cell .k{font-size:.78rem;color:var(--dim);margin-bottom:6px}
 .cell .n{font-family:var(--mono);font-weight:700;font-size:clamp(1.5rem,6.4vw,1.95rem);letter-spacing:-.04em;line-height:1}
@@ -221,30 +289,18 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .calc-cta .fine{font-size:.78rem;color:var(--dim);text-align:center;line-height:1.5}
 .calc-note{padding:14px 20px 18px;border-top:1px solid var(--line);font-size:.78rem;color:var(--dim);line-height:1.55}
 @media(min-width:980px){
-  .calc{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto}
-  .calc-top{grid-column:1/-1;grid-row:1}
-  .calc-in{grid-column:1;grid-row:2;padding:30px 32px 10px}
-  .calc-note{grid-column:1;grid-row:3;padding:16px 32px 22px}
-  .calc-res{grid-column:2;grid-row:2/4;border-left:1px solid var(--line);display:flex;flex-direction:column}
-  .calc-res .out{border-top:0}
+  /* computador: barrinhas à esquerda, resultado e leitura à direita */
+  .calc{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto 1fr auto}
+  .calc .ptop{grid-column:1/-1;grid-row:1}
+  .calc-live{display:contents}
+  .calc-in{grid-column:1;grid-row:2/4;padding:30px 32px 10px}
+  .out{grid-column:2;grid-row:2;border-bottom:0;border-left:1px solid var(--line)}
+  .out .cell{padding:22px 26px}
+  .calc-res{grid-column:2;grid-row:3/5;border-left:1px solid var(--line);display:flex;flex-direction:column}
   .calc-res .verdict{flex:1;padding:22px 26px}
-  .calc-res .cell{padding:22px 26px}
   .calc-res .calc-cta{padding:20px 26px 24px}
+  .calc-note{grid-column:1;grid-row:4;padding:16px 32px 22px}
 }
-
-/* régua de números */
-.band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(0,0,0,.55)}
-.band .in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr}
-@media(min-width:900px){.band .in{grid-template-columns:repeat(4,1fr);padding:0 32px}}
-.bstat{padding:26px 14px;text-align:center}
-.bstat+.bstat{border-left:1px solid var(--line)}
-@media(max-width:899px){
-  .bstat:nth-child(3){border-left:0}
-  .bstat:nth-child(n+3){border-top:1px solid var(--line)}
-}
-.bstat .n{font-family:var(--display);font-weight:800;font-size:1.75rem;letter-spacing:-.04em;line-height:1}
-.bstat .l{font-size:.8rem;color:var(--dim);margin-top:8px;line-height:1.45}
-.niches{max-width:66ch;margin:0 auto;padding:22px 22px 0;text-align:center;font-size:.86rem;color:var(--dim)}
 
 /* motivos */
 .reason{display:grid;grid-template-columns:38px 1fr;gap:16px;padding:24px 0;border-top:1px solid var(--line)}
@@ -287,32 +343,77 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .pstat .n{font-family:var(--display);font-weight:800;font-size:2.05rem;letter-spacing:-.045em;line-height:1}
 .pstat .l{font-size:.88rem;color:var(--dim);margin-top:12px;line-height:1.5}
 .taphint{font-size:.8rem;color:var(--dim);margin-top:28px}
-.prints{margin-top:12px}
-.shot{margin:0 0 12px;padding:8px;break-inside:avoid}
-.shot .zoom{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:10px}
-.shot img{display:block;width:100%;height:auto;border-radius:10px}
-.shot figcaption{padding:10px 6px 4px;font-size:.88rem;line-height:1.35}
+/* carrossel de prints: no celular um por vez com o próximo aparecendo na borda, no computador três por tela */
+.car{
+  position:relative;display:flex;gap:12px;
+  margin:12px -22px 0;padding:2px 0 4px 22px;
+  overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;scroll-padding:0 22px;scrollbar-width:none;
+}
+.car::-webkit-scrollbar{display:none}
+.car::after{content:"";flex:0 0 22px;margin-left:-12px}
+.shot{position:relative;display:flex;flex-direction:column;flex:0 0 calc((100% - 22px) * .88);margin:0;padding:8px;scroll-snap-align:start}
+.shot .zoom{-webkit-appearance:none;appearance:none;display:block;width:100%;padding:0;border:0;background:none;color:inherit;cursor:zoom-in;border-radius:10px}
+/* moldura 4:5: o print entra inteiro, centralizado, e o fundo preenche o que sobrar */
+.stage{
+  display:flex;align-items:center;justify-content:center;
+  box-sizing:content-box;aspect-ratio:4/5;padding:10px;border-radius:10px;
+  background:
+    radial-gradient(120% 62% at 50% 0%,rgba(47,227,236,.15),transparent 70%),
+    radial-gradient(circle,rgba(47,227,236,.12) 1px,transparent 1.6px) 50% 50%/16px 16px,
+    #020A0D;
+  box-shadow:inset 0 0 0 1px var(--line);
+}
+.stage img{display:block;flex:none;width:var(--w,100%);height:auto;border-radius:8px;box-shadow:0 0 0 1px rgba(47,227,236,.14),0 18px 36px -16px #000}
+.zoom:active .stage{box-shadow:inset 0 0 0 1px var(--deepcyan)}
+/* print largo: a frase vem grande em cima e o print embaixo, dentro do mesmo quadro */
+.shot.wide::before{
+  content:"";position:absolute;top:8px;right:8px;bottom:8px;left:8px;border-radius:10px;
+  background:
+    radial-gradient(120% 62% at 50% 0%,rgba(47,227,236,.15),transparent 70%),
+    radial-gradient(circle,rgba(47,227,236,.12) 1px,transparent 1.6px) 50% 50%/16px 16px,
+    #020A0D;
+  box-shadow:inset 0 0 0 1px var(--line);
+}
+.shot.wide figcaption{position:relative;padding:24px 20px 0}
+.shot.wide figcaption b{font-family:var(--display);font-weight:800;font-size:1.36rem;line-height:1.14;letter-spacing:-.03em;text-wrap:balance}
+.shot.wide figcaption span{margin-top:9px}
+.shot.wide>.zoom,.pile{position:relative;margin:auto 0;padding:18px 10px 20px;width:auto}
+.pile{display:grid;gap:12px}
+.shot.wide img{display:block;width:100%;height:auto;border-radius:8px;box-shadow:0 0 0 1px rgba(47,227,236,.14),0 18px 36px -16px #000}
+.shot.wide .zoom:active img{box-shadow:0 0 0 1px var(--deepcyan),0 18px 36px -16px #000}
+.shot figcaption{padding:12px 6px 6px;font-size:.9rem;line-height:1.35}
 .shot figcaption b{display:block;font-weight:700;color:var(--ice)}
-.shot figcaption span{display:block;font-family:var(--mono);font-weight:500;font-size:.68rem;color:var(--dim);margin-top:4px}
-.pw{columns:2;column-gap:12px}
-.pclip{max-height:580px;overflow:hidden;position:relative}
-.pclip::after{content:"";position:absolute;left:0;right:0;bottom:0;height:160px;background:linear-gradient(180deg,transparent,#000 85%);pointer-events:none}
-.pclip.open{max-height:none}
-.pclip.open::after{display:none}
-.pw .shot figcaption{font-size:.78rem;padding:8px 4px 2px}
-.pmore{width:100%;margin-top:6px}
+.shot figcaption span{display:block;font-family:var(--mono);font-weight:500;font-size:.72rem;color:var(--dim);margin-top:4px}
+.carnav{display:flex;align-items:center;gap:12px;margin-top:10px}
+.carbar{flex:1;height:4px;border-radius:999px;background:var(--line);position:relative;overflow:hidden}
+.carbar i{position:absolute;top:0;bottom:0;left:0;width:12%;border-radius:999px;background:var(--cyan)}
+.carcount{flex:none;min-width:5.5ch;text-align:right;font-family:var(--mono);font-weight:500;font-size:.78rem;color:var(--dim)}
+.carbtn{
+  -webkit-appearance:none;appearance:none;flex:none;width:44px;height:44px;padding:0;border-radius:50%;border:1px solid var(--line);
+  background:rgba(0,0,0,.5);color:var(--ice);display:flex;align-items:center;justify-content:center;cursor:pointer;
+  transition:transform .15s,border-color .15s,color .15s,opacity .15s;
+}
+.carbtn svg{display:block;width:18px;height:18px}
+.carbtn:disabled{opacity:.32;cursor:default}
+.carbtn:not(:disabled):active{transform:scale(.92)}
+@media(hover:hover){.carbtn:not(:disabled):hover{border-color:var(--deepcyan);color:var(--cyan)}}
+@media(min-width:640px){.shot{flex-basis:calc((100% - 22px) * .47)}}
 @media(min-width:900px){
-  .prints{columns:3;column-gap:16px}
-  .pf,.pclip,.pw{display:contents}
-  .pclip::after{display:none}
-  .shot{margin-bottom:16px;padding:10px}
-  .pw .shot figcaption{font-size:.88rem;padding:10px 6px 4px}
-  .pmore{display:none}
+  .car{gap:16px;margin:16px 0 0;padding:2px 0 4px;scroll-padding:0}
+  .car::after{display:none}
+  .shot{flex-basis:calc((100% - 32px) / 3);padding:10px}
+  .stage{padding:14px}
+  .shot.wide::before{top:10px;right:10px;bottom:10px;left:10px}
+  .shot.wide figcaption{padding:28px 24px 0}
+  .shot.wide figcaption b{font-size:1.5rem}
+  .shot.wide>.zoom,.pile{padding:20px 14px 24px}
+  .carnav{margin-top:14px}
 }
 .lb{border:0;padding:0;background:transparent;margin:auto;max-width:100vw;max-height:100vh;overflow:visible}
 .lb::backdrop{background:rgba(0,0,0,.9)}
 .lb img{display:block;width:auto;height:auto;max-width:min(94vw,760px);max-height:88vh;max-height:88dvh;border-radius:14px;border:1px solid var(--line);box-shadow:0 30px 90px #000}
-.lb-x{position:fixed;top:14px;right:14px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.75);color:var(--ice);font-size:1.6rem;line-height:1;cursor:pointer}
+.lb-x{-webkit-appearance:none;appearance:none;padding:0;position:fixed;top:max(14px,env(safe-area-inset-top));right:max(14px,env(safe-area-inset-right));width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.75);color:var(--ice);font-size:1.6rem;line-height:1;cursor:pointer}
 .ghead{
   display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;width:fit-content;max-width:100%;
   margin-top:52px;padding:14px 22px;border:1px solid var(--line);border-radius:16px;
@@ -326,8 +427,9 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .grev .gs{color:var(--gold);font-size:.86rem;letter-spacing:.12em}
 .grev p{font-size:.95rem;line-height:1.55}
 .grev .gname{font-size:.8rem;color:var(--dim);margin-top:auto;padding-top:6px}
-.glink{display:inline-block;margin-top:22px;font-weight:700;font-size:.9rem;color:var(--cyan);text-underline-offset:4px}
-.glink:hover{color:var(--hot)}
+.glink{display:inline-flex;align-items:center;min-height:44px;margin-top:12px;font-weight:700;font-size:.9rem;color:var(--cyan);text-underline-offset:4px}
+.glink:active{opacity:.7}
+@media(hover:hover){.glink:hover{color:var(--hot)}}
 .pnote{font-size:.8rem;color:var(--dim);margin-top:14px;max-width:60ch}
 
 /* listas em moldura */
@@ -352,6 +454,7 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .item.main h3{color:var(--cyan)}
 .note{margin-top:22px;padding:14px 18px;border-left:2px solid var(--cyan);background:rgba(47,227,236,.06);border-radius:0 12px 12px 0;font-size:.98rem;max-width:44ch}
 .head .btn{margin-top:22px}
+@media(max-width:559px){.head .btn{width:100%}}
 
 /* quem conduz */
 .who{display:grid;gap:30px;align-items:center}
@@ -369,17 +472,29 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .form input,.form select{
   width:100%;background:rgba(0,0,0,.55);border:1px solid var(--line);border-radius:12px;
   color:var(--ice);font-family:var(--body);font-size:1rem;padding:14px 16px;
+  -webkit-appearance:none;appearance:none;min-height:52px;
+}
+.form select{
+  padding-right:46px;background-repeat:no-repeat;background-position:right 17px center;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%232FE3EC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 .form select option{background:#061419;color:#EDFAFB}
 .form input::placeholder{color:#4F6E77}
 .form input:focus,.form select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(47,227,236,.18)}
+.form input:-webkit-autofill,.form input:-webkit-autofill:hover,.form input:-webkit-autofill:focus{
+  -webkit-text-fill-color:var(--ice);caret-color:var(--ice);
+  -webkit-box-shadow:0 0 0 1000px #05161B inset;box-shadow:0 0 0 1000px #05161B inset;
+  transition:background-color 99999s ease-out;
+}
 .form .btn{width:100%;margin-top:6px}
 .err{display:none;color:#FF9C9C;font-size:.88rem;margin-bottom:12px}
 .err.on{display:block}
 .priv{font-size:.8rem;color:var(--dim);text-align:center;margin:12px 0 10px}
 
 /* rodapé */
-footer{border-top:1px solid var(--line);padding:8px 22px 44px;text-align:center;overflow:hidden}
+footer{border-top:1px solid var(--line);padding:8px max(22px,env(safe-area-inset-right)) 44px max(22px,env(safe-area-inset-left));text-align:center;overflow:hidden}
+footer a{color:inherit;text-decoration:none}
+@media(hover:hover){footer a:hover{color:var(--cyan)}}
 footer .art{
   width:min(400px,84vw);height:auto;margin:0 auto -34px;display:block;
   -webkit-mask-image:radial-gradient(ellipse 62% 54% at 50% 50%,#000 38%,transparent 76%);
@@ -387,35 +502,40 @@ footer .art{
 }
 footer p{font-size:.84rem;color:var(--dim);line-height:1.9}
 footer .legal{margin-top:14px;font-size:.78rem}
+footer .contact{display:flex;flex-wrap:wrap;justify-content:center;gap:0 26px;margin-top:6px;line-height:1.4}
+footer .contact a{display:inline-flex;align-items:center;min-height:44px;color:var(--ice);font-weight:600}
 
 /* barra do celular */
 .mbar{
   position:fixed;left:0;right:0;bottom:0;z-index:60;
-  padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+  padding:12px max(16px,env(safe-area-inset-right)) calc(12px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));
+}
+/* o fundo desce além da borda da tela: se o Safari mexer na barra dele, não aparece fresta embaixo */
+.mbar::before{
+  content:"";position:absolute;top:0;right:0;bottom:-160px;left:0;z-index:-1;
   background:rgba(0,0,0,.86);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
   border-top:1px solid var(--line);
 }
 .mbar .btn{width:100%}
-.mbar{transition:transform .25s ease}
-.mbar.off{transform:translateY(110%)}
+.mbar{transition:transform .25s ease,visibility 0s}
+.mbar.off{transform:translateY(110%);visibility:hidden;transition:transform .25s ease,visibility 0s .25s}
 @media(min-width:900px){.mbar{display:none}}
 
-/* notebook de tela baixa: aperta o hero pra calculadora caber */
-@media(min-width:980px) and (max-height:820px){
-  .hero{padding-top:28px}
-  .hcopy{margin-bottom:24px}
-  .byline{margin-bottom:14px}
-  .byline img{width:40px;height:40px}
-  .hcopy h1{font-size:2.7rem}
-  .calc-in{padding-top:22px}
-  .field{margin-bottom:14px}
+/* celular deitado: sobra pouca altura, então só a barra fica grudada na tela, e ela encolhe */
+@media(max-height:480px) and (orientation:landscape) and (max-width:899px){
+  header{position:relative}
+  .calc .out{position:static;box-shadow:none}
+  [id]{scroll-margin-top:16px}
+  body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+  .mbar{padding-top:8px;padding-bottom:calc(8px + env(safe-area-inset-bottom))}
+  .mbar .btn{padding:11px 20px}
 }
 
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .load .hcopy,.load .calc{animation:none;opacity:1;transform:none}
+  .load .hcopy,.load .facts{animation:none;opacity:1;transform:none}
   #circuit{display:none}
-  .btn,.mbar{transition:none}
+  .btn,.mbar,.carbtn{transition:none}
 }
 </style>
 </head>
@@ -432,89 +552,46 @@ footer .legal{margin-top:14px;font-size:.78rem}
       <img src="/assets/mark.jpg" width="38" height="38" alt="">
       <span>Avence <em>Performance</em></span>
     </a>
+    <nav class="nav" aria-label="Seções do site">
+      <a href="#metodo">Como funciona</a>
+      <a href="#prova">Resultados</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#calculadora">Calculadora</a>
+    </nav>
     <a class="btn" id="zapTop" href="#diagnostico">Falar com Estrategista</a>
   </div>
 </header>
 
 <main>
 
-<!-- HERO -->
+<!-- 1. QUEM É A AVENCE -->
 <section class="hero" id="topo">
-  <div class="wrap">
+  <div class="wrap hgrid">
     <div class="hcopy">
-      <div>
-        <a class="byline" href="#quem">
-          <img src="/assets/gio-avatar.webp" width="48" height="48" alt="">
-          <span><b>Giovanny Barbosa</b>, fundador da Avence<small>De Campo Grande, MS, para o Brasil inteiro</small></span>
-        </a>
-        <h1>Vale a pena investir em anúncios pro seu negócio?</h1>
-      </div>
-      <div>
-        <p class="lede">A gente faz a conta com você, agora, em 10 segundos. Serve pra qualquer produto ou serviço que precise de cliente novo todo dia. É só mover as barrinhas com os dados da sua empresa.</p>
-        <p class="hnote"><a href="#prova">Ver resultados de clientes</a></p>
+      <h1>Agência de tráfego pago para empresas que precisam de cliente novo todo dia</h1>
+      <p class="lede">A Avence Performance planeja, cria e gerencia os anúncios da sua empresa no Instagram, no Facebook e no Google. São 6 anos acompanhando cada conta toda semana, de Campo Grande, MS, para o Brasil inteiro.</p>
+      <div class="hcta">
+        <a class="btn" id="zapHero" href="#diagnostico">Falar com Estrategista</a>
+        <a class="btn ghost" href="#prova">Ver resultados de clientes</a>
       </div>
     </div>
 
-    <div class="calc" id="calc">
-      <div class="calc-top"><span class="dot"></span>Calculadora de ponto de equilíbrio</div>
-
-      <div class="calc-in">
-        <div class="field">
-          <div class="top"><label class="q" for="verba">Quanto você pode investir por mês</label><span class="val" id="oVerba">R$ 3.000</span></div>
-          <div class="hint">Só o dinheiro do anúncio, sem contar a gestão.</div>
-          <input type="range" id="verba" min="500" max="20000" step="250" value="3000">
-        </div>
-
-        <div class="field">
-          <div class="top"><label class="q" for="ticket">Ticket médio</label><span class="val" id="oTicket">R$ 400</span></div>
-          <div class="hint">O valor médio de uma compra na sua empresa.</div>
-          <input type="range" id="ticket" min="50" max="8000" step="50" value="400">
-        </div>
-
-        <div class="field">
-          <div class="top"><label class="q" for="margem">Margem de lucro</label><span class="val" id="oMargem">40%</span></div>
-          <div class="hint">De cada R$ 100 vendidos, quanto sobra depois de pagar o produto, a equipe e os impostos.</div>
-          <input type="range" id="margem" min="10" max="80" step="5" value="40">
-        </div>
+    <div class="panel facts">
+      <div class="ptop"><span class="dot"></span>A Avence em números</div>
+      <div class="fgrid">
+        <div class="bstat"><div class="n">R$&nbsp;203&nbsp;mi</div><div class="l">em anúncios já gerenciados pela Avence</div></div>
+        <div class="bstat"><div class="n">6 anos</div><div class="l">de operação em tráfego pago</div></div>
+        <div class="bstat"><div class="n">+100</div><div class="l">empresas ativas hoje</div></div>
+        <div class="bstat"><div class="n">44</div><div class="l">nichos diferentes atendidos</div></div>
       </div>
-
-      <div class="calc-res">
-      <div class="out" aria-live="polite">
-        <div class="cell">
-          <div class="k">Vendas por mês</div>
-          <div class="n" id="oVendas">19<small>pra empatar o investimento</small></div>
-        </div>
-        <div class="cell">
-          <div class="k">Valor por cliente</div>
-          <div class="n" id="oCpa">R$ 160<small>o máximo que dá pra pagar</small></div>
-        </div>
-      </div>
-
-      <div class="verdict" id="oVerdict"></div>
-
-      <div class="calc-cta">
-        <a class="btn" id="zapCalc" href="#diagnostico" target="_blank" rel="noopener">Mandar essa conta no WhatsApp</a>
-        <div class="fine">Seus números vão junto na mensagem.</div>
-      </div>
-      </div>
-
-      <div class="calc-note">A conta considera só a verba de anúncio. É uma simulação pra você ter clareza, não uma promessa de resultado.</div>
+      <p class="fnote">Moda, óticas, móveis, celulares, estética, alimentos, educação, perfumaria, semijoias, pet shop, veículos e serviços locais estão entre eles.</p>
     </div>
   </div>
 </section>
 
-<!-- NÚMEROS -->
-<div class="band">
-  <div class="in">
-    <div class="bstat"><div class="n">R$ 203 mi</div><div class="l">já investidos em anúncios</div></div>
-    <div class="bstat"><div class="n">6 anos</div><div class="l">rodando sem parar</div></div>
-    <div class="bstat"><div class="n">+100</div><div class="l">empresas ativas hoje</div></div>
-    <div class="bstat"><div class="n">44</div><div class="l">nichos diferentes atendidos</div></div>
-  </div>
-</div>
-<p class="niches">Moda, óticas, móveis, celulares, estética, alimentos, educação, perfumaria, semijoias, pet shop, veículos e serviços locais estão entre eles.</p>
+<div class="rule"></div>
 
-<!-- MOTIVOS -->
+<!-- 2. O PROBLEMA: por que tanto anúncio não dá resultado -->
 <section class="sec">
   <div class="wrap split">
     <div class="head">
@@ -527,7 +604,7 @@ footer .legal{margin-top:14px;font-size:.78rem}
         <div class="x" aria-hidden="true">×</div>
         <div>
           <h3>Verba baixa demais</h3>
-          <p>O sistema do Meta precisa de alguns dias e de um valor mínimo pra descobrir quem compra de você. Com R$ 10 por dia ele nunca descobre, e seu anúncio aparece pra quem nunca vai comprar.</p>
+          <p>O sistema do Meta precisa de alguns dias e de um valor mínimo pra descobrir quem compra de você. Com R$&nbsp;10 por dia ele nunca descobre, e seu anúncio aparece pra quem nunca vai comprar.</p>
         </div>
       </div>
       <div class="reason">
@@ -557,110 +634,114 @@ footer .legal{margin-top:14px;font-size:.78rem}
 
 <div class="rule"></div>
 
-<!-- PROVA SOCIAL -->
+<!-- 3. O MÉTODO: como a Avence resolve -->
+<section class="sec" id="metodo">
+  <div class="wrap split">
+    <div class="head">
+      <h2>Do zero ao anúncio <span class="nw">no ar em até 48h</span></h2>
+      <p class="lede">É assim que a Avence evita esses quatro erros. Sem enrolação, sem contrato longo pra te prender, e você acompanha cada etapa.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="w">Etapa 1<span>Diagnóstico</span></div>
+        <h3>A gente olha seus números antes de prometer qualquer coisa</h3>
+        <p>Quanto você vende, quanto sobra, quantos clientes consegue atender por dia. Se a conta não fechar pro seu caso, falamos na hora. Sai mais barato pros dois.</p>
+      </div>
+      <div class="step">
+        <div class="w">Etapa 2<span>Estrutura</span></div>
+        <h3>Instalamos o rastreamento antes de gastar o primeiro real</h3>
+        <p>É o que permite saber exatamente qual anúncio trouxe cada venda. Sem isso você até vende, mas fica no escuro sobre o que funcionou.</p>
+      </div>
+      <div class="step">
+        <div class="w">Etapa 3<span>Em até 48h</span></div>
+        <h3>Suas campanhas entram no ar</h3>
+        <p>Vídeo, arte e texto produzidos pela nossa equipe. Em até 48 horas depois do diagnóstico seu anúncio já está rodando e aparecendo pro seu cliente.</p>
+      </div>
+      <div class="step">
+        <div class="w">Toda semana<span>Gestão</span></div>
+        <h3>Ajuste semanal e relatório que você entende</h3>
+        <p>Quanto entrou, quanto saiu e o que vamos mudar. Em português, sem termo técnico que não explica nada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- 4. A PROVA: o que os clientes contam -->
 <section class="sec" id="prova">
   <div class="wrap">
     <h2>Resultado de verdade, contado pelo cliente</h2>
     <p class="lede">Mensagens reais que chegaram no nosso WhatsApp. Os nomes ficam de fora, os números não.</p>
 
     <div class="grid3 pstats">
-      <div class="frame pstat"><div class="n"><span class="num">R$ 651 mil</span></div><div class="l">vendidos em julho, o melhor mês do ano de um cliente</div></div>
-      <div class="frame pstat"><div class="n"><span class="num">R$ 140 mil</span></div><div class="l">faturados em 10 horas, novo recorde de um cliente</div></div>
+      <div class="frame pstat"><div class="n"><span class="num">R$&nbsp;651 mil</span></div><div class="l">vendidos em julho, o melhor mês do ano de um cliente</div></div>
+      <div class="frame pstat"><div class="n"><span class="num">R$&nbsp;140 mil</span></div><div class="l">faturados em 10 horas, novo recorde de um cliente</div></div>
       <div class="frame pstat"><div class="n"><span class="num">3x</span></div><div class="l">o faturamento de uma cliente de estética depois da parceria</div></div>
     </div>
 
-    <p class="taphint">Toque em qualquer print pra ampliar.</p>
-    <div class="prints">
-      <div class="pf">
-        <figure class="frame shot">
-          <button type="button" class="zoom" aria-label="Ampliar print: R$ 3.738 em anúncio, R$ 395 mil em venda">
-            <img src="/assets/prints/roi.webp" width="632" height="779" alt="Print de conversa no WhatsApp. Cliente: quanto gastamos mês passado? Avence: R$ 3.738,53. Cliente: 395 mil de venda. Avence: tivemos um ROI de 105,65." loading="lazy" decoding="async">
-          </button>
-          <figcaption><b>R$ 3.738 em anúncio, R$ 395 mil em venda</b><span>abr 2024</span></figcaption>
-        </figure>
-        <figure class="frame shot">
-          <button type="button" class="zoom" aria-label="Ampliar print: R$ 651 mil no melhor mês do ano">
-            <img src="/assets/prints/651k.webp" width="760" height="392" alt="Print de conversa no WhatsApp. Cliente: Mano, julho foi o melhor mês do ano! Batemos 651k. Agosto já começou fervendo. Sábado 65k, hoje 30k. Meta de agosto 600 mil." loading="lazy" decoding="async">
-          </button>
-          <figcaption><b>R$ 651 mil no melhor mês do ano</b></figcaption>
-        </figure>
-      </div>
-      <div class="pclip" id="pclip"><div class="pw">
-        <figure class="frame shot">
-          <button type="button" class="zoom" aria-label="Ampliar print: Faturamento triplicou">
-            <img src="/assets/prints/triplicou.webp" width="760" height="1133" alt="Print de grupo no WhatsApp, com os nomes cobertos. Cliente: nosso faturamento triplicou depois que fechamos parceria com vc. Outra pessoa do grupo: Isso é verdade. Melhor decisão que tomamos até hoje." loading="lazy" decoding="async">
-          </button>
-          <figcaption><b>Faturamento triplicou</b><span>estética, mar 2026</span></figcaption>
-        </figure>
-        <figure class="frame shot">
-          <button type="button" class="zoom" aria-label="Ampliar print: R$ 140 mil em 10 horas">
-            <img src="/assets/prints/140mil.webp" width="760" height="855" alt="Print de grupo no WhatsApp. Cliente: Passando pra dar um feedback generoso! Em 10hs faturamos 140 mil. Gratidão pelo empenho e trabalho de todos em conjunto com nossa equipe! Batemos mais um recorde. 2025 promete." loading="lazy" decoding="async">
-          </button>
-          <figcaption><b>R$ 140 mil em 10 horas</b><span>jan 2025</span></figcaption>
-        </figure>
-        <figure class="frame shot">
-          <button type="button" class="zoom" aria-label="Ampliar print: Ia vender tudo e arrumar um emprego">
-            <img src="/assets/prints/emprego.webp" width="760" height="519" alt="Print de conversa no WhatsApp. Cliente: Queria dizer que estou muito contente com os resultados. Estava bem difícil pra mim conseguir clientes, já estava pensando em vender tudo e arrumar um emprego. Vocês são top." loading="lazy" decoding="async">
-          </button>
-          <figcaption><b>Ia vender tudo e arrumar um emprego</b><span>dez 2022</span></figcaption>
-        </figure>
-        <figure class="frame shot">
-          <button type="button" class="zoom" aria-label="Ampliar print: Tinha desistido do digital">
-            <img src="/assets/prints/desistido.webp" width="760" height="481" alt="Print de conversa no WhatsApp. Cliente: Giovani, quero te agradecer! Eu já tinha desistido de investir no digital, achei que realmente não era pra mim. Sua didática é ótima, é como se vc tirasse uma venda dos meus olhos, agora eu enxerguei a solução." loading="lazy" decoding="async">
-          </button>
-          <figcaption><b>Tinha desistido do digital</b></figcaption>
-        </figure>
-        <figure class="frame shot">
-          <button type="button" class="zoom" aria-label="Ampliar print: Mês fechado em 407k">
-            <img src="/assets/prints/407k.webp" width="760" height="1211" alt="Print de grupo no WhatsApp, com nomes e fotos cobertos. Cliente: 403k em 31/08/24, mas o dia ainda não acabou. Atualizando: 407. Meus amigos, muito obrigado pelo trabalho prestado esse mês! Se preparem que mês que vem 550k no mínimo!" loading="lazy" decoding="async">
-          </button>
-          <figcaption><b>Mês fechado em 407k</b><span>ago 2024</span></figcaption>
-        </figure>
-        <figure class="frame shot">
-          <button type="button" class="zoom" aria-label="Ampliar print: Loja cheia na Mega Promoção">
-            <img src="/assets/prints/modas.webp" width="760" height="678" alt="Print de conversa no WhatsApp. Cliente: Como proprietária da loja, quero agradecer ao Giovany e a equipe da Avence Brasil pelo excelente serviço prestado. Lançamos uma Mega Promoção na loja e precisava divulgar, então contratei o serviço da Avence Brasil, e o resultado foi maravilhoso, muita procura no WhatsApp convertida em vendas, loja cheia, clientes de todos os bairros. Realmente o tráfego pago vale a pena." loading="lazy" decoding="async">
-          </button>
-          <figcaption><b>Loja cheia na Mega Promoção</b><span>loja de moda, jul 2025</span></figcaption>
-        </figure>
-        <figure class="frame shot">
-          <button type="button" class="zoom" aria-label="Ampliar print: 9 fechamentos com 2 dias de trabalho">
-            <img src="/assets/prints/2dias.webp" width="760" height="1349" alt="Print de conversa no WhatsApp. Cliente: Gostaria de te agradecer pela excelência no trabalho. Estão vindo vários clientes e são apenas 2 dias de trabalho. Ontem foram 3 e hoje deu 9 fechamentos." loading="lazy" decoding="async">
-          </button>
-          <figcaption><b>9 fechamentos com 2 dias de trabalho</b><span>dez 2024</span></figcaption>
-        </figure>
-        <figure class="frame shot">
-          <button type="button" class="zoom" aria-label="Ampliar print: Melhor resultado entre as agências">
-            <img src="/assets/prints/agencias.webp" width="760" height="391" alt="Print de conversa no WhatsApp. Cliente: Olha, conseguimos melhorar bem o impulsionamento. Digo que das agências que trabalhamos vocês conseguiram nos trazer um melhor resultado." loading="lazy" decoding="async">
-          </button>
-          <figcaption><b>Melhor resultado entre as agências</b><span>Uberlândia, MG, abr 2024</span></figcaption>
-        </figure>
-        <figure class="frame shot">
-          <button type="button" class="zoom" aria-label="Ampliar print: Chamada absurda no WhatsApp">
-            <img src="/assets/prints/vestuario.webp" width="760" height="495" alt="Print de conversa no WhatsApp. Cliente: Esse final de semana teve uma chamada absurda no Whats. Muita gente mesmo. E tivemos vendas desses mesmos clientes que chamaram no Whats. Desde quarta da semana fazendo venda on-line, com cliente pedindo pra entregar. E tivemos 2 clientes que chamaram Whats e foram até a loja pra fechar." loading="lazy" decoding="async">
-          </button>
-          <figcaption><b>Chamada absurda no WhatsApp</b><span>vestuário</span></figcaption>
-        </figure>
-        <figure class="frame shot">
-          <button type="button" class="zoom" aria-label="Ampliar print: Leads melhoraram bastante">
-            <img src="/assets/prints/leads.webp" width="760" height="232" alt="Print de conversa no WhatsApp. Cliente: Passando para dar um feedback. Os leads melhoraram bastante. Digo em questão de clientes. Estão demonstrando mais interesse e também estão dentro dos clientes que atendemos." loading="lazy" decoding="async">
-          </button>
-          <figcaption><b>Leads melhoraram bastante</b><span>varejo de alto padrão, Uberlândia, fev 2025</span></figcaption>
-        </figure>
-        <figure class="frame shot">
-          <button type="button" class="zoom" aria-label="Ampliar print: Muito lead de atacado no fim de semana">
-            <img src="/assets/prints/findis.webp" width="735" height="249" alt="Print de conversa no WhatsApp. Cliente: olha, passando pra avisar que ontem chegou muito lead de atacado. Foi um fds muito bom. Muito obrigada, seu trabalho é excelente." loading="lazy" decoding="async">
-          </button>
-          <figcaption><b>Muito lead de atacado no fim de semana</b><span>estética</span></figcaption>
-        </figure>
-        <figure class="frame shot">
-          <button type="button" class="zoom" aria-label="Ampliar print: Recorde de vendas no mês">
-            <img src="/assets/prints/recorde.webp" width="760" height="167" alt="Print de conversa no WhatsApp. Cliente: Batemos record de vendas esse mês. Falta amanhã ainda." loading="lazy" decoding="async">
-          </button>
-          <figcaption><b>Recorde de vendas no mês</b><span>nov 2025</span></figcaption>
-        </figure>
-      </div></div>
+    <p class="taphint">Arraste pro lado pra ver todos. Toque em qualquer print pra ampliar.</p>
+    <div class="car" id="car" tabindex="0" role="region" aria-label="Prints de conversas com clientes">
+      <figure class="frame shot">
+        <button type="button" class="zoom" aria-label="Ampliar print: R$&nbsp;3.738 em anúncio, R$&nbsp;395 mil em venda"><span class="stage"><img src="/assets/prints/roi.webp" width="632" height="779" alt="Print de conversa no WhatsApp. Cliente: quanto gastamos mês passado? Avence: R$&nbsp;3.738,53. Cliente: 395 mil de venda. Avence: tivemos um ROI de 105,65." loading="lazy" decoding="async"></span></button>
+        <figcaption><b>R$&nbsp;3.738 em anúncio, R$&nbsp;395 mil em venda</b><span>abr 2024</span></figcaption>
+      </figure>
+      <figure class="frame shot wide">
+        <figcaption><b>R$&nbsp;651 mil no melhor mês do ano</b></figcaption>
+        <button type="button" class="zoom" aria-label="Ampliar print: R$&nbsp;651 mil no melhor mês do ano"><img src="/assets/prints/651k.webp" width="760" height="392" alt="Print de conversa no WhatsApp. Cliente: Mano, julho foi o melhor mês do ano! Batemos 651k. Agosto já começou fervendo. Sábado 65k, hoje 30k. Meta de agosto 600 mil." loading="lazy" decoding="async"></button>
+      </figure>
+      <figure class="frame shot">
+        <button type="button" class="zoom" aria-label="Ampliar print: R$&nbsp;140 mil em 10 horas"><span class="stage"><img src="/assets/prints/140mil.webp" width="760" height="855" alt="Print de grupo no WhatsApp. Cliente: Passando pra dar um feedback generoso! Em 10hs faturamos 140 mil. Gratidão pelo empenho e trabalho de todos em conjunto com nossa equipe! Batemos mais um recorde. 2025 promete." loading="lazy" decoding="async"></span></button>
+        <figcaption><b>R$&nbsp;140 mil em 10 horas</b><span>jan 2025</span></figcaption>
+      </figure>
+      <figure class="frame shot wide">
+        <figcaption><b>Ia vender tudo e arrumar um emprego</b><span>dez 2022</span></figcaption>
+        <button type="button" class="zoom" aria-label="Ampliar print: Ia vender tudo e arrumar um emprego"><img src="/assets/prints/emprego.webp" width="760" height="519" alt="Print de conversa no WhatsApp. Cliente: Queria dizer que estou muito contente com os resultados. Estava bem difícil pra mim conseguir clientes, já estava pensando em vender tudo e arrumar um emprego. Vocês são top." loading="lazy" decoding="async"></button>
+      </figure>
+      <figure class="frame shot">
+        <button type="button" class="zoom" aria-label="Ampliar print: Faturamento triplicou"><span class="stage"><img style="--w:83.6%" src="/assets/prints/triplicou.webp" width="760" height="1133" alt="Print de grupo no WhatsApp, com os nomes cobertos. Cliente: nosso faturamento triplicou depois que fechamos parceria com vc. Outra pessoa do grupo: Isso é verdade. Melhor decisão que tomamos até hoje." loading="lazy" decoding="async"></span></button>
+        <figcaption><b>Faturamento triplicou</b><span>estética, mar 2026</span></figcaption>
+      </figure>
+      <figure class="frame shot wide">
+        <figcaption><b>Melhor resultado entre as agências</b><span>Uberlândia, MG, abr 2024</span></figcaption>
+        <button type="button" class="zoom" aria-label="Ampliar print: Melhor resultado entre as agências"><img src="/assets/prints/agencias.webp" width="760" height="391" alt="Print de conversa no WhatsApp. Cliente: Olha, conseguimos melhorar bem o impulsionamento. Digo que das agências que trabalhamos vocês conseguiram nos trazer um melhor resultado." loading="lazy" decoding="async"></button>
+      </figure>
+      <figure class="frame shot">
+        <button type="button" class="zoom" aria-label="Ampliar print: Mês fechado em 407k"><span class="stage"><img style="--w:78.2%" src="/assets/prints/407k.webp" width="760" height="1211" alt="Print de grupo no WhatsApp, com nomes e fotos cobertos. Cliente: 403k em 31/08/24, mas o dia ainda não acabou. Atualizando: 407. Meus amigos, muito obrigado pelo trabalho prestado esse mês! Se preparem que mês que vem 550k no mínimo!" loading="lazy" decoding="async"></span></button>
+        <figcaption><b>Mês fechado em 407k</b><span>ago 2024</span></figcaption>
+      </figure>
+      <figure class="frame shot wide">
+        <figcaption><b>Tinha desistido do digital</b></figcaption>
+        <button type="button" class="zoom" aria-label="Ampliar print: Tinha desistido do digital"><img src="/assets/prints/desistido.webp" width="760" height="481" alt="Print de conversa no WhatsApp. Cliente: Giovani, quero te agradecer! Eu já tinha desistido de investir no digital, achei que realmente não era pra mim. Sua didática é ótima, é como se vc tirasse uma venda dos meus olhos, agora eu enxerguei a solução." loading="lazy" decoding="async"></button>
+      </figure>
+      <figure class="frame shot">
+        <button type="button" class="zoom" aria-label="Ampliar print: Loja cheia na Mega Promoção"><span class="stage"><img src="/assets/prints/modas.webp" width="760" height="678" alt="Print de conversa no WhatsApp. Cliente: Como proprietária da loja, quero agradecer ao Giovany e a equipe da Avence Brasil pelo excelente serviço prestado. Lançamos uma Mega Promoção na loja e precisava divulgar, então contratei o serviço da Avence Brasil, e o resultado foi maravilhoso, muita procura no WhatsApp convertida em vendas, loja cheia, clientes de todos os bairros. Realmente o tráfego pago vale a pena." loading="lazy" decoding="async"></span></button>
+        <figcaption><b>Loja cheia na Mega Promoção</b><span>loja de moda, jul 2025</span></figcaption>
+      </figure>
+      <figure class="frame shot wide">
+        <figcaption><b>Chamada absurda no WhatsApp</b><span>vestuário</span></figcaption>
+        <button type="button" class="zoom" aria-label="Ampliar print: Chamada absurda no WhatsApp"><img src="/assets/prints/vestuario.webp" width="760" height="495" alt="Print de conversa no WhatsApp. Cliente: Esse final de semana teve uma chamada absurda no Whats. Muita gente mesmo. E tivemos vendas desses mesmos clientes que chamaram no Whats. Desde quarta da semana fazendo venda on-line, com cliente pedindo pra entregar. E tivemos 2 clientes que chamaram Whats e foram até a loja pra fechar." loading="lazy" decoding="async"></button>
+      </figure>
+      <figure class="frame shot">
+        <button type="button" class="zoom" aria-label="Ampliar print: 9 fechamentos com 2 dias de trabalho"><span class="stage"><img style="--w:70.2%" src="/assets/prints/2dias.webp" width="760" height="1349" alt="Print de conversa no WhatsApp. Cliente: Gostaria de te agradecer pela excelência no trabalho. Estão vindo vários clientes e são apenas 2 dias de trabalho. Ontem foram 3 e hoje deu 9 fechamentos." loading="lazy" decoding="async"></span></button>
+        <figcaption><b>9 fechamentos com 2 dias de trabalho</b><span>dez 2024</span></figcaption>
+      </figure>
+      <figure class="frame shot wide">
+        <figcaption><b>Lead melhor, fim de semana bom e recorde no mês</b><span>três clientes</span></figcaption>
+        <div class="pile">
+          <button type="button" class="zoom" aria-label="Ampliar print: Leads melhoraram bastante"><img src="/assets/prints/leads.webp" width="760" height="232" alt="Print de conversa no WhatsApp. Cliente: Passando para dar um feedback. Os leads melhoraram bastante. Digo em questão de clientes. Estão demonstrando mais interesse e também estão dentro dos clientes que atendemos." loading="lazy" decoding="async"></button>
+          <button type="button" class="zoom" aria-label="Ampliar print: Muito lead de atacado no fim de semana"><img src="/assets/prints/findis.webp" width="735" height="249" alt="Print de conversa no WhatsApp. Cliente: olha, passando pra avisar que ontem chegou muito lead de atacado. Foi um fds muito bom. Muito obrigada, seu trabalho é excelente." loading="lazy" decoding="async"></button>
+          <button type="button" class="zoom" aria-label="Ampliar print: Recorde de vendas no mês"><img src="/assets/prints/recorde.webp" width="760" height="167" alt="Print de conversa no WhatsApp. Cliente: Batemos record de vendas esse mês. Falta amanhã ainda." loading="lazy" decoding="async"></button>
+        </div>
+      </figure>
     </div>
-    <button type="button" class="btn ghost pmore" id="pmore">Ver todos os 14 prints</button>
+    <div class="carnav">
+      <div class="carbar" aria-hidden="true"><i id="carFill"></i></div>
+      <span class="carcount" id="carCount">1 / 12</span>
+      <button type="button" class="carbtn" id="carPrev" aria-label="Prints anteriores" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" class="carbtn" id="carNext" aria-label="Próximos prints"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
 
     <div class="ghead">
       <span class="gscore">5,0</span>
@@ -693,42 +774,7 @@ footer .legal{margin-top:14px;font-size:.78rem}
 
 <div class="rule"></div>
 
-<!-- COMO FUNCIONA -->
-<section class="sec">
-  <div class="wrap split">
-    <div class="head">
-      <h2>Do zero ao anúncio <span class="nw">no ar em até 48h</span></h2>
-      <p class="lede">Sem enrolação e sem contrato longo pra te prender. Você acompanha cada etapa.</p>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="w">Etapa 1<span>Diagnóstico</span></div>
-        <h3>A gente olha seus números antes de prometer qualquer coisa</h3>
-        <p>Quanto você vende, quanto sobra, quantos clientes consegue atender por dia. Se a conta não fechar pro seu caso, falamos na hora. Sai mais barato pros dois.</p>
-      </div>
-      <div class="step">
-        <div class="w">Etapa 2<span>Estrutura</span></div>
-        <h3>Instalamos o rastreamento antes de gastar o primeiro real</h3>
-        <p>É o que permite saber exatamente qual anúncio trouxe cada venda. Sem isso você até vende, mas fica no escuro sobre o que funcionou.</p>
-      </div>
-      <div class="step">
-        <div class="w">Etapa 3<span>Em até 48h</span></div>
-        <h3>Suas campanhas entram no ar</h3>
-        <p>Vídeo, arte e texto produzidos pela nossa equipe. Em até 48 horas depois do diagnóstico seu anúncio já está rodando e aparecendo pro seu cliente.</p>
-      </div>
-      <div class="step">
-        <div class="w">Toda semana<span>Gestão</span></div>
-        <h3>Ajuste semanal e relatório que você entende</h3>
-        <p>Quanto entrou, quanto saiu e o que vamos mudar. Em português, sem termo técnico que não explica nada.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- ESTEIRA -->
+<!-- 5. A ESTEIRA: tudo que a agência faz -->
 <section class="sec" id="servicos">
   <div class="wrap split">
     <div class="head">
@@ -773,38 +819,7 @@ footer .legal{margin-top:14px;font-size:.78rem}
 
 <div class="rule"></div>
 
-<!-- FIT -->
-<section class="sec">
-  <div class="wrap">
-    <h2>A gente não atende todo mundo</h2>
-    <p class="lede">Falar isso antes economiza o tempo dos dois lados. Veja onde você se encaixa.</p>
-
-    <div class="duo">
-      <div class="frame box">
-        <h3>Vale a conversa se você</h3>
-        <ul class="plus">
-          <li><span>+</span>Já vende e quer crescer com previsibilidade</li>
-          <li><span>+</span>Consegue investir a partir de R$ 3.000 por mês</li>
-          <li><span>+</span>Vende qualquer produto ou serviço que precise de cliente todo dia</li>
-          <li><span>+</span>Tem margem que sustenta o investimento em anúncio</li>
-        </ul>
-      </div>
-      <div class="frame box off">
-        <h3>Talvez não seja a hora se você</h3>
-        <ul class="plus">
-          <li><span>−</span>Quer testar R$ 300 só pra ver no que dá</li>
-          <li><span>−</span>Precisa de retorno já na primeira semana</li>
-          <li><span>−</span>Não pretende atender quem chegar, nem por pessoa nem por IA</li>
-          <li><span>−</span>Busca só quem posta no Instagram pelo menor preço</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- QUEM CONDUZ -->
+<!-- 6. QUEM CONDUZ -->
 <section class="sec" id="quem">
   <div class="wrap who">
     <figure class="frame portrait">
@@ -820,7 +835,98 @@ footer .legal{margin-top:14px;font-size:.78rem}
 
 <div class="rule"></div>
 
-<!-- FORM -->
+<!-- 7. PRA QUEM É -->
+<section class="sec" id="fit">
+  <div class="wrap">
+    <h2>A gente não atende todo mundo</h2>
+    <p class="lede">Falar isso antes economiza o tempo dos dois lados. Veja onde você se encaixa.</p>
+
+    <div class="duo">
+      <div class="frame box">
+        <h3>Vale a conversa se você</h3>
+        <ul class="plus">
+          <li><span>+</span>Já vende e quer crescer com previsibilidade</li>
+          <li><span>+</span>Consegue investir a partir de R$&nbsp;3.000 por mês</li>
+          <li><span>+</span>Vende qualquer produto ou serviço que precise de cliente todo dia</li>
+          <li><span>+</span>Tem margem que sustenta o investimento em anúncio</li>
+        </ul>
+      </div>
+      <div class="frame box off">
+        <h3>Talvez não seja a hora se você</h3>
+        <ul class="plus">
+          <li><span>−</span>Quer testar R$&nbsp;300 só pra ver no que dá</li>
+          <li><span>−</span>Precisa de retorno já na primeira semana</li>
+          <li><span>−</span>Não pretende atender quem chegar, nem por pessoa nem por IA</li>
+          <li><span>−</span>Busca só quem posta no Instagram pelo menor preço</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- 8. A CONTA: vale a pena pro negócio de quem está lendo -->
+<section class="sec" id="calculadora">
+  <div class="wrap">
+    <div class="chead">
+      <h2>Vale a pena investir em anúncios pro seu negócio?</h2>
+      <p class="lede">A gente faz a conta com você, agora, em 10 segundos. É só mover as barrinhas com os dados da sua empresa.</p>
+    </div>
+
+    <div class="panel calc" id="calc">
+      <div class="ptop"><span class="dot"></span>Calculadora de ponto de equilíbrio</div>
+
+      <div class="calc-live">
+        <div class="out" aria-live="polite">
+          <div class="cell">
+            <div class="k">Vendas por mês</div>
+            <div class="n" id="oVendas">19<small>pra empatar o investimento</small></div>
+          </div>
+          <div class="cell">
+            <div class="k">Valor por cliente</div>
+            <div class="n" id="oCpa">R$&nbsp;160<small>o máximo que dá pra pagar</small></div>
+          </div>
+        </div>
+
+        <div class="calc-in">
+          <div class="field">
+            <div class="top"><label class="q" for="verba">Quanto você pode investir por mês</label><span class="val" id="oVerba">R$&nbsp;3.000</span></div>
+            <div class="hint">Só o dinheiro do anúncio, sem contar a gestão.</div>
+            <input type="range" id="verba" min="500" max="20000" step="250" value="3000">
+          </div>
+
+          <div class="field">
+            <div class="top"><label class="q" for="ticket">Ticket médio</label><span class="val" id="oTicket">R$&nbsp;400</span></div>
+            <div class="hint">O valor médio de uma compra na sua empresa.</div>
+            <input type="range" id="ticket" min="50" max="8000" step="50" value="400">
+          </div>
+
+          <div class="field">
+            <div class="top"><label class="q" for="margem">Margem de lucro</label><span class="val" id="oMargem">40%</span></div>
+            <div class="hint">De cada R$&nbsp;100 vendidos, quanto sobra depois de pagar o produto, a equipe e os impostos.</div>
+            <input type="range" id="margem" min="10" max="80" step="5" value="40">
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-res">
+        <div class="verdict" id="oVerdict"></div>
+
+        <div class="calc-cta">
+          <a class="btn" id="zapCalc" href="#diagnostico" target="_blank" rel="noopener">Mandar essa conta no WhatsApp</a>
+          <div class="fine">Seus números vão junto na mensagem.</div>
+        </div>
+      </div>
+
+      <div class="calc-note">A conta considera só a verba de anúncio. É uma simulação pra você ter clareza, não uma promessa de resultado.</div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- 9. O PRÓXIMO PASSO -->
 <section class="sec" id="diagnostico">
   <div class="wrap split">
     <div class="head">
@@ -838,24 +944,24 @@ footer .legal{margin-top:14px;font-size:.78rem}
     <div class="frame form">
       <div class="row">
         <label for="fNome">Seu nome</label>
-        <input id="fNome" type="text" autocomplete="name" placeholder="Como podemos te chamar">
+        <input id="fNome" type="text" autocomplete="name" autocapitalize="words" enterkeyhint="next" placeholder="Como podemos te chamar">
       </div>
       <div class="row">
         <label for="fZap">Seu WhatsApp</label>
-        <input id="fZap" type="tel" inputmode="tel" autocomplete="tel" placeholder="(67) 90000-0000">
+        <input id="fZap" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="next" placeholder="(67) 90000-0000">
       </div>
       <div class="row">
         <label for="fNeg">Sua empresa</label>
-        <input id="fNeg" type="text" autocomplete="organization" placeholder="Nome e o que vende">
+        <input id="fNeg" type="text" autocomplete="organization" enterkeyhint="done" placeholder="Nome e o que vende">
       </div>
       <div class="row">
         <label for="fVerba">Quanto pode investir por mês</label>
         <select id="fVerba">
           <option value="">Escolha uma faixa</option>
-          <option>Até R$ 1.500</option>
-          <option>R$ 1.500 a R$ 3.000</option>
-          <option>R$ 3.000 a R$ 8.000</option>
-          <option>Acima de R$ 8.000</option>
+          <option>Até R$&nbsp;1.500</option>
+          <option>R$&nbsp;1.500 a R$&nbsp;3.000</option>
+          <option>R$&nbsp;3.000 a R$&nbsp;8.000</option>
+          <option>Acima de R$&nbsp;8.000</option>
           <option>Ainda não sei</option>
         </select>
       </div>
@@ -878,9 +984,11 @@ footer .legal{margin-top:14px;font-size:.78rem}
   <p class="legal">
     Avence Performance é uma marca de AVENCE BRASIL MARKETING LTDA<br>
     CNPJ 46.920.741/0001-91<br>
-    Av. Eduardo Elias Zahran, 2022, Sala 02, Vila Santa Dorotheia, Campo Grande, MS, CEP 79004-001<br>
-    (67) 99814-9663<br>
-    avenceperformance@gmail.com
+    Av. Eduardo Elias Zahran, 2022, Sala 02, Vila Santa Dorotheia, Campo Grande, MS, CEP 79004-001
+  </p>
+  <p class="contact">
+    <a id="zapFoot" href="https://wa.me/5567998149663" target="_blank" rel="noopener">(67) 99814-9663</a>
+    <a href="mailto:avenceperformance@gmail.com">avenceperformance@gmail.com</a>
   </p>
 </footer>
 
@@ -890,7 +998,7 @@ footer .legal{margin-top:14px;font-size:.78rem}
   <button type="button" class="lb-x" id="lbX" aria-label="Fechar">×</button>
 </dialog>
 
-<div class="mbar">
+<div class="mbar off">
   <a class="btn" id="zapBar" href="#diagnostico">Falar com Estrategista</a>
 </div>
 
@@ -900,17 +1008,23 @@ footer .legal{margin-top:14px;font-size:.78rem}
    ============================================================ */
 const CONFIG = {
   telefone: "5567998149663",   // WhatsApp de destino (55 + DDD + número)
-  origem:   "LP-Trafego"       // troque por campanha pra saber de onde veio o lead
+  origem:   "site"             // vai no fim da mensagem ("Origem: site, topo"). Troque pelo nome da campanha pra saber de onde veio o lead
 };
 
 const el = id => document.getElementById(id);
-const brl = n => "R$ " + Math.round(n).toLocaleString("pt-BR");
-const linkZap = t => "https://wa.me/" + CONFIG.telefone + "?text=" + encodeURIComponent(t);
+// R$ e número ficam colados na tela (espaço que não quebra linha); na mensagem do WhatsApp o espaço volta a ser comum
+const brl = n => "R$\u00a0" + Math.round(n).toLocaleString("pt-BR");
+const linkZap = t => "https://wa.me/" + CONFIG.telefone + "?text=" + encodeURIComponent(t.replace(/\u00a0/g, " "));
+const semMovimento = matchMedia("(prefers-reduced-motion: reduce)").matches;
+// o Safari do iPhone só mostra o efeito de toque (:active) se existir algum ouvinte de toque na página
+document.addEventListener("touchstart", () => {}, {passive:true});
+// última linha de toda mensagem: diz de qual botão a pessoa veio
+const origem = pos => "\n\nOrigem: " + CONFIG.origem + ", " + pos;
+const MSG_ESTRATEGISTA = "Olá! Vim pelo site da Avence Performance e gostaria de falar com um estrategista sobre tráfego pago para a minha empresa.";
 
 /* ---------- Calculadora ---------- */
 function pintar(input){
-  const p = (input.value - input.min) / (input.max - input.min) * 100;
-  input.style.setProperty("--p", p + "%");
+  input.style.setProperty("--f", (input.value - input.min) / (input.max - input.min));
 }
 
 function calcular(){
@@ -962,39 +1076,79 @@ function calcular(){
 
   // o botão da calculadora leva a simulação da pessoa na mensagem
   el("zapCalc").href = linkZap(
-    "Oi! Fiz a conta no site de vocês:\n\n"
-    + "Investimento por mês: " + brl(verba) + "\n"
+    "Olá! Fiz a simulação no site da Avence Performance e gostaria de avaliar esses números com um estrategista.\n\n"
+    + "Investimento mensal em anúncios: " + brl(verba) + "\n"
     + "Ticket médio: " + brl(ticket) + "\n"
     + "Margem de lucro: " + marg + "%\n"
-    + "Vendas pra empatar: " + vendas + " por mês\n\n"
-    + "Faz sentido pro meu negócio? [" + CONFIG.origem + " | calculadora]"
+    + "Vendas para empatar: " + vendas + " por mês"
+    + origem("calculadora")
   );
 }
 ["verba","ticket","margem"].forEach(id => {
   const i = el(id);
   i.addEventListener("input", () => { pintar(i); calcular(); });
   pintar(i);
+
+  // No iPhone o Safari só mexe a barrinha se o dedo arrastar a bolinha. Aqui um toque em
+  // qualquer ponto do trilho leva a bolinha até lá. Onde o navegador já faz isso, nada muda.
+  let antes = null;
+  i.addEventListener("touchstart", () => { antes = i.value; }, {passive:true});
+  i.addEventListener("click", e => {
+    if (antes === null) return;
+    const jaMexeu = i.value !== antes;
+    antes = null;
+    if (jaMexeu || !e.clientX) return;
+    const r = i.getBoundingClientRect();
+    const th = matchMedia("(pointer: coarse)").matches ? 48 : 26;   // largura da área da bolinha, igual ao CSS
+    const min = +i.min, max = +i.max, step = +i.step || 1;
+    const centro = r.left + th/2 + (r.width - th) * ((i.value - min) / (max - min));
+    if (Math.abs(e.clientX - centro) <= th/2) return;        // tocou na própria bolinha
+    const f = Math.max(0, Math.min(1, (e.clientX - r.left - th/2) / (r.width - th)));
+    i.value = min + Math.round(f * (max - min) / step) * step;
+    i.dispatchEvent(new Event("input", {bubbles:true}));
+  });
 });
 calcular();
 
 /* ---------- Botões de WhatsApp ---------- */
-// a etiqueta entre colchetes diz qual botão a pessoa clicou.
-[["zapTop","topo"],["zapBar","barra-celular"]].forEach(([id,pos]) => {
+[["zapTop","topo"],["zapHero","primeira dobra"],["zapBar","barra do celular"]].forEach(([id,pos]) => {
   const b = el(id);
   if (b){
-    b.href = linkZap("Oi! Quero falar com um estrategista sobre anúncios. [" + CONFIG.origem + " | " + pos + "]");
+    b.href = linkZap(MSG_ESTRATEGISTA + origem(pos));
     b.target = "_blank";
     b.rel = "noopener";
   }
 });
 
-el("zapServ").href = linkZap("Oi! Quero um orçamento sob medida pra minha empresa. [" + CONFIG.origem + " | servicos]");
+el("zapServ").href = linkZap("Olá! Vim pelo site da Avence Performance e gostaria de receber um orçamento sob medida para a minha empresa." + origem("serviços"));
 el("zapServ").target = "_blank";
 el("zapServ").rel = "noopener";
 
-el("fDireto").href = linkZap("Oi! Quero falar com um estrategista sobre anúncios. [" + CONFIG.origem + " | sem-formulario]");
+el("fDireto").href = linkZap(MSG_ESTRATEGISTA + origem("mensagem direta"));
+el("zapFoot").href = linkZap(MSG_ESTRATEGISTA + origem("rodapé"));
 el("fDireto").target = "_blank";
 el("fDireto").rel = "noopener";
+
+// máscara do telefone: a pessoa digita só os números e o campo formata
+el("fZap").addEventListener("input", e => {
+  let d = e.target.value.replace(/\D/g, "");
+  if (d.length > 11 && d.startsWith("55")) d = d.slice(2);
+  d = d.slice(0, 11);
+  let v = d;
+  if (d.length > 2)  v = "(" + d.slice(0,2) + ") " + d.slice(2);
+  if (d.length > 6)  v = "(" + d.slice(0,2) + ") " + d.slice(2,6) + "-" + d.slice(6);
+  if (d.length > 10) v = "(" + d.slice(0,2) + ") " + d.slice(2,7) + "-" + d.slice(7);
+  e.target.value = v;
+});
+
+// o "seguinte" do teclado do celular leva pro próximo campo
+[["fNome","fZap"],["fZap","fNeg"],["fNeg",null]].forEach(([de,para]) => {
+  el(de).addEventListener("keydown", e => {
+    if (e.key !== "Enter") return;
+    e.preventDefault();
+    para ? el(para).focus() : el(de).blur();
+  });
+});
 
 el("fSend").addEventListener("click", () => {
   const nome = el("fNome").value.trim();
@@ -1002,23 +1156,30 @@ el("fSend").addEventListener("click", () => {
   const neg  = el("fNeg").value.trim();
   const vb   = el("fVerba").value;
 
-  if (!nome || !zap || !neg){ el("fErr").classList.add("on"); return; }
+  if (!nome || !zap || !neg){
+    el("fErr").classList.add("on");
+    el(!nome ? "fNome" : !zap ? "fZap" : "fNeg").focus();   // já abre o teclado no campo que faltou
+    return;
+  }
   el("fErr").classList.remove("on");
 
-  const texto = "Oi! Quero o diagnóstico gratuito.\n\n"
+  const texto = "Olá! Gostaria de solicitar o diagnóstico gratuito da Avence Performance.\n\n"
     + "Nome: " + nome + "\n"
     + "WhatsApp: " + zap + "\n"
     + "Empresa: " + neg + "\n"
-    + "Investimento por mês: " + (vb || "não informado") + "\n\n"
-    + "[" + CONFIG.origem + "]";
+    + "Investimento mensal em anúncios: " + (vb || "não informado")
+    + origem("formulário");
 
   // Evento de conversão do Meta. Descomente depois de instalar o pixel.
   // if (typeof fbq === "function") fbq("track", "Lead");
 
-  window.open(linkZap(texto), "_blank");
+  // o navegador de dentro do Instagram e do Facebook às vezes barra aba nova: se barrar, abre na mesma
+  const url = linkZap(texto);
+  const aba = window.open(url, "_blank");
+  if (!aba) location.href = url;
 });
 
-/* ---------- Prints: ampliar e ver todos ---------- */
+/* ---------- Prints: ampliar ---------- */
 const lb = el("lb"), lbImg = new Image();
 document.querySelectorAll(".zoom").forEach(b => b.addEventListener("click", () => {
   const i = b.querySelector("img");
@@ -1030,13 +1191,66 @@ document.querySelectorAll(".zoom").forEach(b => b.addEventListener("click", () =
 }));
 el("lbX").addEventListener("click", () => lb.close());
 lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
-el("pmore").addEventListener("click", () => { el("pclip").classList.add("open"); el("pmore").hidden = true; });
+// com o print aberto, o dedo não rola a página de trás (pinça pra dar zoom continua valendo)
+lb.addEventListener("touchmove", e => {
+  if (e.touches.length > 1) return;
+  if (window.visualViewport && visualViewport.scale > 1.02) return;
+  e.preventDefault();
+}, {passive:false});
 
-/* ---------- Barra do celular sai de cena quando o formulário aparece ---------- */
+/* ---------- Prints: carrossel ---------- */
+(function(){
+  const car = el("car");
+  if (!car) return;
+  const slides = [...car.children], fill = el("carFill"), count = el("carCount");
+  const prev = el("carPrev"), next = el("carNext");
+  let pedido = 0;
+
+  function atualizar(){
+    pedido = 0;
+    const x = car.scrollLeft, largura = car.clientWidth, total = car.scrollWidth;
+    fill.style.width = (largura / total * 100) + "%";
+    fill.style.left  = (x / total * 100) + "%";
+    // conta quantos prints já passaram inteiros pela tela
+    let vistos = 0;
+    slides.forEach(sl => { if (sl.offsetLeft + sl.offsetWidth <= x + largura + 2) vistos++; });
+    count.textContent = Math.max(1, vistos) + " / " + slides.length;
+    prev.disabled = x <= 2;
+    next.disabled = x >= total - largura - 2;
+  }
+  const pedir = () => { if (!pedido) pedido = requestAnimationFrame(atualizar); };
+
+  // setas: avançam uma tela inteira (um print no celular, três no computador)
+  function andar(dir){
+    const cs = getComputedStyle(car), vao = parseFloat(cs.columnGap) || 0;
+    const um = slides[0].offsetWidth + vao;
+    const util = car.clientWidth - 2 * (parseFloat(cs.paddingLeft) || 0);
+    const porTela = Math.max(1, Math.floor((util + vao) / um) || 1);
+    car.scrollBy({left: dir * um * porTela, behavior: semMovimento ? "auto" : "smooth"});
+  }
+  prev.addEventListener("click", () => andar(-1));
+  next.addEventListener("click", () => andar(1));
+  car.addEventListener("scroll", pedir, {passive:true});
+  addEventListener("resize", pedir);
+  addEventListener("load", pedir);
+  atualizar();
+})();
+
+/* ---------- Barra do celular: só aparece quando não tem outro botão de WhatsApp na tela ---------- */
+const mbar = document.querySelector(".mbar");
 if ("IntersectionObserver" in window){
-  new IntersectionObserver(es => {
-    es.forEach(e => document.querySelector(".mbar").classList.toggle("off", e.isIntersecting));
-  }, {threshold:.25}).observe(document.querySelector(".form"));
+  const naTela = new Set();
+  const ver = es => {
+    es.forEach(e => e.isIntersecting ? naTela.add(e.target) : naTela.delete(e.target));
+    mbar.classList.toggle("off", naTela.size > 0);
+  };
+  // botões: contam quando estão visíveis entre o topo fixo e o espaço da barra
+  const ioBotao = new IntersectionObserver(ver, {rootMargin:"-66px 0px -84px 0px", threshold:.6});
+  ["zapHero","zapCalc","zapServ"].forEach(id => ioBotao.observe(el(id)));
+  // formulário: a barra sai assim que ele começa a aparecer, pra não cobrir os campos
+  new IntersectionObserver(ver, {threshold:.25}).observe(document.querySelector(".form"));
+} else {
+  mbar.classList.remove("off");
 }
 
 /* ---------- Fundo de circuito animado ---------- */
@@ -1046,10 +1260,12 @@ if ("IntersectionObserver" in window){
   if (!cv || reduz) return;
 
   const ctx = cv.getContext("2d");
-  let W, H, dpr, trilhas = [], estatico, pulsos = [], raf;
+  // no celular: menos pixels e metade dos quadros, pra poupar bateria
+  const leve = matchMedia("(max-width: 899px), (pointer: coarse)").matches;
+  let W, H, dpr, trilhas = [], estatico, pulsos = [], raf, ultimo = 0;
 
   function montar(){
-    dpr = Math.min(devicePixelRatio||1, 2);
+    dpr = Math.min(devicePixelRatio||1, leve ? 1.5 : 2);
     W = cv.clientWidth; H = cv.clientHeight;
     cv.width = W*dpr; cv.height = H*dpr;
     ctx.setTransform(dpr,0,0,dpr,0,0);
@@ -1106,12 +1322,16 @@ if ("IntersectionObserver" in window){
     return {x:tr[1].x+(tr[2].x-tr[1].x)*k, y:tr[1].y+(tr[2].y-tr[1].y)*k};
   }
 
-  function frame(){
+  function frame(agora){
+    raf = requestAnimationFrame(frame);
+    if (leve && agora - ultimo < 32) return;
+    ultimo = agora;
+    const mult = leve ? 2 : 1;
     ctx.clearRect(0,0,W,H);
     if (estatico) ctx.drawImage(estatico, 0, 0, W, H);
     pulsos.forEach(p => {
       const tr = trilhas[p.i]; if (!tr) { Object.assign(p, novoPulso()); return; }
-      p.t += p.v;
+      p.t += p.v * mult;
       if (p.t > 1) Object.assign(p, novoPulso(), {t:0});
       const q = ponto(tr, p.t);
       const g = ctx.createRadialGradient(q.x,q.y,0,q.x,q.y,16);
@@ -1121,7 +1341,6 @@ if ("IntersectionObserver" in window){
       ctx.fillStyle = g;
       ctx.beginPath(); ctx.arc(q.x,q.y,16,0,7); ctx.fill();
     });
-    raf = requestAnimationFrame(frame);
   }
 
   // no celular a barra de endereço muda a altura ao rolar: só remonta se a largura mudar
